@@ -95,7 +95,7 @@
 				controls = new THREE.FirstPersonControls( camera );
 
 				controls.movementSpeed = 25;
-				controls.lookSpeed = 0.05;
+				controls.lookSpeed = 0.1;
 				controls.lookVertical = true;
 
 				scene = new THREE.Scene();
@@ -114,7 +114,7 @@
 
 
 				var loader = new THREE.OBJLoader( manager );
-				loader.load( 'model/scene.obj', function ( object ) {
+				loader.load( 'model/scene1.obj', function ( object ) {
 
 					object.traverse( function ( child ) {
 
