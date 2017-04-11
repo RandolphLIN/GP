@@ -1,0 +1,16 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+body{
+	width: 100%;
+	background-color: #FFFFFF;
+}
+.container {
+  position: relative;
+  max-width: 100%;
+  margin: 0;
+}
+#board{
+	top:200px;
+}
