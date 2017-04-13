@@ -103,6 +103,17 @@ input[type=checkbox]:checked + label:before {
 	position: absolute;
 	z-index: 80;
 }
+.start{
+	left: 30%;
+	top: 70%;
+	width: 40%;
+	height: 25%;
+	background-color: #E14848;
+	position: absolute;
+	z-index: 80;
+	/*display: none;*/
+	opacity: 0;
+}
 
 #img1{
 	position: absolute;
@@ -118,6 +129,9 @@ input[type=checkbox]:checked + label:before {
 	position: absolute;
 	padding-top:15%;
 	left:40%;
+}
+a{
+	min-width: 1000px;
 }
 .d1{
 
