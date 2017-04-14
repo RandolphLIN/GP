@@ -27,12 +27,12 @@ body {
 }
 
 
-
-img {
-						/*完善图片位置*/				
+/*完善图片位置*/  
+/*img {
+									
   display: block;
   width: 100%;
-}
+}*/
 
 #img1,#img2,#img3{
 	width: 2%;
@@ -142,14 +142,9 @@ a{
   margin-left: 10%;
 }*/
 
-.scene1 {				/*设置页面展示区域*/
+.scene1,.scene2,.scene3{				/*设置页面展示区域*/
   padding: -5%;
   margin: -5%;
-}
-
-.scene2 {
-  margin: -5%;
-  padding: 0%;
 }
 
 
