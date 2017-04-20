@@ -28,11 +28,11 @@ body {
 
 
 /*完善图片位置*/  
-/*img {
+img {
 									
   display: block;
   width: 100%;
-}*/
+}
 
 #img1,#img2,#img3{
 	width: 2%;
