@@ -1,13 +1,11 @@
-/**{
+/*{
 	padding: 0;
 	margin: 0;
 }
 body{
 	background-color: #FFFFFF;
-	background-color: #E7F077;
 	width: 100%;
 	margin: 0 auto;
-	
 }
 .container {
 	margin: 0 auto;
@@ -17,26 +15,127 @@ body{
   margin: 0;
 }*/
 
-
 body {
   font-family: monospace;
   font-size: 18px;
   background: #111;
   color: #666;
   margin: 0;
+  overflow: hidden;
 }
 
+.container {
+  padding-top: -20%;
+  position: relative;
+  max-width: 1920px;
+  margin: 0 auto;   /*居中*/
+  padding: -5%;
+}
+.container1 {
+  position: relative;
+  max-width: 1920px;
+  margin: 0 auto; 
+  padding: -5%;
+  padding-top: -220%;
+}
 
 /*完善图片位置*/  
 img {
-									
   display: block;
   width: 100%;
 }
 
-#img1,#img2,#img3{
-	width: 2%;
+.img3{
+  width: 200%;
+  overflow: hidden;
+  left:40%;
 }
+
+
+/*scene4场景图片大小*/
+
+
+.img4{  
+  width: 100%;
+  overflow: hidden;
+  left:-100%;
+}
+
+#img1,#img2,#img3{
+	width: 3%;
+}
+
+#img1{
+  position: absolute;
+  padding-top:10%;
+  left:25%;
+}
+
+#img2{
+  position: absolute;
+  padding-top:42%;
+  left:43%;
+}
+
+#img3{
+  position: absolute;
+  padding-top:30%;
+  left:85%;
+}
+
+/*.two{
+  width: 100%;
+  z-index: 0;
+}*/
+
+.info{
+  width: 100%;            /*200%导致出现多余画面*/
+  position: absolute;
+  z-index: 80;
+}
+.ground{
+  margin-left: -70%;
+  width: 100%;
+  position: absolute;
+  z-index:0;
+}
+.three{
+  width: 171%;
+  margin-left: -34%;
+  margin-top: -3%;
+}
+.start{
+  left: 30%;
+  top: 70%;
+  width: 40%;
+  height: 25%;
+  background-color: #E14848;
+  position: absolute;
+  z-index: 80;
+  /*display: none;*/
+  opacity: 0;
+}
+
+a{
+  min-width: 1000px;
+}
+
+.scene1,.scene2{        /*设置页面展示区域*/
+  padding: -5%;
+  margin: -5%;
+}
+/*.scene3{
+  margin-left: -15%;
+}*/
+
+.W1{
+  width: 50%;
+  margin: 0 auto;
+}
+
+/*.container--offset {
+  margin-left: 10%;
+}*/
 
 /*input[type=checkbox] {
   display: none;
@@ -86,72 +185,6 @@ input[type=checkbox] + label:before {
 input[type=checkbox]:checked + label:before {
   background: #00FFAA;
 }*/
-
-.container {
-  padding-top: -20%;
-  position: relative;
-  max-width: 1920px;
-  margin: 0 auto;		/*居中*/
-  padding: -5%;
-}
-.two{
-	position: absolute;
-	z-index: 0;
-}
-.info{
-	width: 200%;
-	position: absolute;
-	z-index: 80;
-}
-.start{
-	left: 30%;
-	top: 70%;
-	width: 40%;
-	height: 25%;
-	background-color: #E14848;
-	position: absolute;
-	z-index: 80;
-	/*display: none;*/
-	opacity: 0;
-}
-
-#img1{
-	position: absolute;
-	padding-top:2%;
-	left:4%;
-}
-#img2{
-	position: absolute;
-	padding-top:18%;
-	left:23%;
-}
-#img3{
-	position: absolute;
-	padding-top:15%;
-	left:40%;
-}
-a{
-	min-width: 1000px;
-}
-.d1{
-
-
-}
-
-/*.container--offset {
-  margin-left: 10%;
-}*/
-
-.scene1,.scene2,.scene3{				/*设置页面展示区域*/
-  padding: -5%;
-  margin: -5%;
-}
-
-
-.W1{
-	width: 50%;
-	 margin: 0 auto;
-}
 
 /*.fill {
   position: absolute;
@@ -213,4 +246,3 @@ a{
 }
 .layer:nth-child(6) button {
 }
-*/

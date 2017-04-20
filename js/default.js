@@ -15,7 +15,7 @@ img1.addEventListener('mouseup', function(event){
 document.getElementById('img1').src="img/s2_btn1.png";
 console.log('up');
 
-window.location.assign("index.html");
+window.location.assign("default3.html");
 // var btnX = document.getElementById('scene2').offsetLeft;
 // console.log(btnX);
 },false);
@@ -31,7 +31,7 @@ img1.addEventListener('touchend', function(event){
 document.getElementById('img1').src="img/s2_btn1.png";
 console.log('up');
 
-window.location.assign("index.html");
+window.location.assign("default3.html");
 // var btnX = document.getElementById('scene2').offsetLeft;
 // console.log(btnX);
 },false);
