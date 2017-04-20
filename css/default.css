@@ -35,8 +35,6 @@ body {
   position: relative;
   max-width: 1920px;
   margin: 0 auto; 
-  padding: -5%;
-  padding-top: -220%;
 }
 
 /*完善图片位置*/  
@@ -100,15 +98,15 @@ img {
   z-index:0;
 }
 .three{
-  width: 171%;
-  margin-left: -34%;
-  margin-top: -3%;
+  width: 191%;
+  margin-left: -46%;
+  margin-top: -5%;
 }
 .start{
   left: 30%;
-  top: 70%;
+  top: 72%;
   width: 40%;
-  height: 25%;
+  height: 30%;
   background-color: #E14848;
   position: absolute;
   z-index: 80;
