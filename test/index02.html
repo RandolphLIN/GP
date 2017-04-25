@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>skatepark</title>
+		<title>DEMO</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 		<style>
@@ -38,8 +38,8 @@
 	</head>
 	<body>
 
-		<div id="container"><br /><br /><br /><br /><br />生成中...</div>
-		<div id="info">skatepark<br />WSAD控制</div>
+		<div id="container"><br /><br /><br /><br /><br />Generating world...</div>
+		<div id="info">demo<br />(left click: forward, right click: backward)</div>
 
 		<script src="js/three.js"></script>
 
@@ -80,8 +80,18 @@
 
 				camera.position.x=90;
 				camera.position.y=20;
-				camera.position.z=-57;	
+				camera.position.z=-57;
+
+				// camera.lookAt({
+    //                 x : 300,
+    //                 y : 40,
+    //                 z : 300
+    //             });
+
+
 				
+				
+
 				controls = new THREE.FirstPersonControls( camera );
 
 				controls.movementSpeed = 25;
@@ -89,17 +99,18 @@
 				controls.lookVertical = true;
 
 				scene = new THREE.Scene();
-//背景				
 				scene.background = new THREE.CubeTextureLoader()
               .setPath( 'textures/bgtest/pisa/' )
               .load( [
               'px1.png',
-              'nx1.png',
-              'py1.png',
+              'nx.png',
+              'py.png',
               'ny1.png',
-              'pz1.png',
+              'pz.png',
               'nz1.png'
               ] );
+
+
 	
 //the ground
 				var texture = new THREE.Texture();
@@ -128,6 +139,7 @@
 
 					scene.add( object );
 				});
+
 
 
 //the bridge
@@ -654,7 +666,7 @@
 			}
 
 
-//参考网格
+参考网格
 			function initGrid(){
                 var helper = new THREE.GridHelper( 400, 400 );
                 helper.setColors( 0x0000ff, 0x808080 );

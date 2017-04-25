@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>three.js webgl - interactive - voxel painter</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<style>
+			body {
+				font-family: Monospace;
+				background-color: #f0f0f0;
+				margin: 0px;
+				overflow: hidden;
+			}
+
+			/*#oldie { background-color: #ddd !important }*/
+		</style>
+	</head>
+	<body>
+
+		<script src="js/three.js"></script>
+
+		<!-- <script src="js/Detector.js"></script> -->
+
+		<script src="js/setvoxel.js"></script>
+
+		<script src="js/OBJLoader.js"></script>
+		<script src="js/FirstPersonControls.js"></script>
+
+
+<script>
+				var container, stats;
+
+			var camera, controls, scene, renderer;
+
+			var mesh;
+
+
+			// var a = new THREE.Vector3( 100, 100, 0 );
+
+			var worldWidth = 128, worldDepth = 128,
+
+			worldHalfWidth = worldWidth / 2, worldHalfDepth = worldDepth / 2
+
+			var clock = new THREE.Clock();
+
+			var windowHalfX = window.innerWidth / 2;
+			var windowHalfY = window.innerHeight / 2;
+
+
+			init();
+			animate();
+			// initGrid();
+
+			function init() {
+
+				container = document.getElementById( 'container' );
+
+				camera = new THREE.PerspectiveCamera( 60, window.innerWidth / window.innerHeight, 1, 20000 );
+
+				camera.position.x=90;
+				camera.position.y=20;
+				camera.position.z=-57;
+
+				// camera.lookAt({
+    //                 x : 300,
+    //                 y : 40,
+    //                 z : 300
+    //             });
+
+
+				
+				
+
+				controls = new THREE.FirstPersonControls( camera );
+
+				controls.movementSpeed = 25;
+				controls.lookSpeed = 0.1;
+				controls.lookVertical = true;
+
+}
+			function animate() {
+
+				requestAnimationFrame( animate );
+
+				render();
+
+			}
+
+			function render() {
+
+				controls.update( clock.getDelta() );
+				renderer.render( scene, camera );
+
+			}
+
+		</script>
+	</body>
+</html>
