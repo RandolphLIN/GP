@@ -38,6 +38,7 @@
 				rollOverMaterial = new THREE.MeshBasicMaterial( { color: 0xff0000, opacity: 0.5, transparent: true } );
 				rollOverMesh = new THREE.Mesh( rollOverGeo, rollOverMaterial );
 				scene.add( rollOverMesh );
+				console.log("!!!!");
 
 				// cubes
 
@@ -70,7 +71,7 @@
 				raycaster = new THREE.Raycaster();
 				mouse = new THREE.Vector2();
 
-				var geometry = new THREE.PlaneBufferGeometry( 900, 900 );				//可建平面范围
+				var geometry = new THREE.PlaneBufferGeometry( 200, 200 );				//可建平面范围
 				geometry.rotateX( - Math.PI / 2 );
 
 				plane = new THREE.Mesh( geometry, new THREE.MeshBasicMaterial( { visible: true } ) );

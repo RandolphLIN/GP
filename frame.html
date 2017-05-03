@@ -1,0 +1,107 @@
+<html>
+    <head>
+    <meta charset="utf-8">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <style type="text/css">
+        body{
+            width: 100%;
+            height: 100%;
+        }
+            #animbg{
+                background-image: url(guochang.png);
+                width:100%;
+                height:100%;
+                background-size:cover;
+                background-repeat: no-repeat;
+            }
+        </style>
+        <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+
+    </head>
+    <body onload="play()">
+        <div id="animbg"></div>
+                <script type="text/javascript">
+        (function(window){
+            window.frameAnimation = {
+                anims:(function(){
+                    
+                    return function(obj,height,steps,eachtime,times, callback){
+                        var runing = false;
+                        var handler = null;         //obj,width,steps,eachtime,times定时器
+                        var step = 0;       //当前帧
+                        var time = 0;       //当前第几轮
+                        var speed = eachtime*4000/steps;      //间隔时间
+
+                        height = document.body.clientWidth *1080/1920;
+
+                        console.log(height);
+                        var oneStepheight = height;
+                        
+                        function _play(){
+                            if(step >= steps){
+                                    step = 0;
+                                    time++;
+                            }
+                            if(0 == times || time <times){
+                                obj.css('background-position',  '0 '+ -oneStepheight * step);
+                                step++;
+
+                            }else{
+                                control.stop();
+                                callback && callback();
+                            }
+                        }
+
+                        window.onresize = function(){
+        height = document.body.clientWidth *1080/1920;
+        }   
+                        
+                        var control = {
+                            start:function(){
+                                if(!runing){
+                                    runing = true;
+                                    step = time = 0;
+                                    handler = setInterval(_play, speed);
+                                }
+                                return this;
+                            }
+                          
+                            ,stop:function(restart){
+                                if(runing){
+                                    runing = false;
+                                    if(handler){
+                                        clearInterval(handler);
+                                        handler = null;
+                                    }
+                                    if(restart){
+                                        obj.css('background-position', '0 0');
+                                        step = 0;
+                                        time = 0;
+                                    }
+                                }
+                            }
+                            ,dispose:function(){
+                                this.stop();
+                                //console.log('anim dispose');
+                            }
+                        };
+                        return control;
+                    }
+                })()
+            }
+        })(window);
+
+        function play(){
+            var anim = frameAnimation.anims($('#animbg'),5400,5,1,0);
+            anim.start();
+        }
+        
+    </script>
+        <!-- <script type="text/javascript"> 
+        window.onresize = function(){
+        console.log(1);
+        }        
+        </script> -->
+    </body>
+</html>
