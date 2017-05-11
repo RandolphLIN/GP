@@ -53,7 +53,7 @@ img1.addEventListener('mouseup', function(event){
 document.getElementById('img2').src="img/s2_btn2.png";
 console.log('up');
 
-window.location.assign("index.html");
+window.location.assign("index02.html");
 // var btnX = document.getElementById('img1').offsetLeft;
 // console.log(btnX);
 },false);
@@ -70,7 +70,7 @@ img1.addEventListener('touchend', function(event){
 document.getElementById('img2').src="img/s2_btn2.png";
 console.log('up');
 
-window.location.assign("index.html");
+window.location.assign("index02.html");
 // var btnX = document.getElementById('img1').offsetLeft;
 // console.log(btnX);
 },false);
@@ -87,7 +87,7 @@ img1.addEventListener('mouseup', function(event){
 document.getElementById('img3').src="img/s2_btn3.png";
 console.log('up');
 
-window.location.assign("index02.html");
+window.location.assign("index.html");
 },false);
 img1.addEventListener('mousedown', function(event){
 document.getElementById('img3').src="img/s2_btn1.png";
@@ -100,7 +100,7 @@ img1.addEventListener('touchend', function(event){
 document.getElementById('img3').src="img/s2_btn3.png";
 console.log('up');
 
-window.location.assign("index02.html");
+window.location.assign("index.html");
 },false);
 img1.addEventListener('touchstart', function(event){
 document.getElementById('img3').src="img/s2_btn1.png";
