@@ -423,7 +423,7 @@
 
 				});
 				var loader15 = new THREE.OBJLoader( manager15 );
-				loader15.load( 'model/test16.obj', function ( object ) {
+				loader15.load( 'model/obstacles4.obj', function ( object ) {
 
 					object.traverse( function ( child ) {
 
