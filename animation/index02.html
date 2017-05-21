@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>skatepark</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<style>
+			body {
+				color: #61443e;
+				font-family:Monospace;
+				font-size:13px;
+				text-align:center;
+
+				background-color: #bfd1e5;
+				margin: 0px;
+				overflow: hidden;
+			}
+
+			#info {
+				position: absolute;
+				top: 0px; width: 100%;
+				padding: 5px;
+			}
+
+			a {
+
+				color: #a06851;
+			}
+
+			#oldie {
+				background:rgb(100,0,0) !important;
+				color:#fff !important;
+				margin-top:10em !important;
+			}
+			#oldie a { color:#fff }
+
+		</style>
+	</head>
+	<body>
+
+		<div id="container"><br /><br /><br /><br /><br />生成中...</div>
+		<div id="info">skatepark<br />WSAD控制<a href="index.html">返回</a><a href="javascript:save()">保存图片</a></div>
+
+
+		<script src="js/three.js"></script>
+
+		<script src="js/OBJLoader.js"></script>
+		<script src="js/setvoxel.js"></script>
+		<script src="js/FirstPersonControls.js"></script>
+		<script src="js/model.js"></script>				<!--导入模型-->
+		<script>
+
+
+			var container, stats;
+
+			var camera, controls, scene, renderer;
+
+			var mesh;
+
+
+			var mixer;  //animation?
+
+
+			// var a = new THREE.Vector3( 100, 100, 0 );
+
+			var worldWidth = 128, worldDepth = 128,
+
+			worldHalfWidth = worldWidth / 2, worldHalfDepth = worldDepth / 2
+
+			var clock = new THREE.Clock();
+
+			var windowHalfX = window.innerWidth / 2;
+			var windowHalfY = window.innerHeight / 2;
+
+
+			init();
+			animate();
+			initGrid();
+
+			function init() {
+
+				container = document.getElementById( 'container' );
+
+				camera = new THREE.PerspectiveCamera( 60, window.innerWidth / window.innerHeight, 1, 20000 );
+
+				camera.position.x=-60;
+				camera.position.y=20;
+				camera.position.z=-57;	
+				
+				controls = new THREE.FirstPersonControls( camera );
+
+				controls.movementSpeed = 25;
+				controls.lookSpeed = 1;
+				controls.lookVertical = true;
+
+				scene = new THREE.Scene();
+//背景				
+				scene.background = new THREE.CubeTextureLoader()
+              .setPath( 'textures/bgtest/pisa/' )
+              .load( [
+              'px1.png',
+              'nx1.png',
+              'py1.png',
+              'ny1.png',
+              'pz1.png',
+              'nz1.png'
+              ] );
+				
+
+				// camera.lookAt( scene.position );
+
+
+
+				// var ambientLight = new THREE.AmbientLight( 0xF9F89A );
+				// scene.add( ambientLight );
+
+				// var directionalLight = new THREE.DirectionalLight( 0xECF360, 2 );
+				// directionalLight.position.set( 1, 1, 0.5 ).normalize();
+				// scene.add( directionalLight );
+
+
+				var light = new THREE.HemisphereLight( 0xffffbb, 0x080820, 1 );
+				scene.add(light);
+
+
+				renderer = new THREE.WebGLRenderer();
+				renderer.setClearColor( 0xbfd1e5 );
+				renderer.setPixelRatio( window.devicePixelRatio );
+				renderer.setSize( window.innerWidth, window.innerHeight );
+
+				container.innerHTML = "";
+
+				container.appendChild( renderer.domElement );
+
+
+				window.addEventListener( 'resize', onWindowResize, false );
+
+
+
+
+				document.addEventListener( 'mousemove', onDocumentMouseMove, false );   //防止镜头跑偏
+
+			}
+
+			function onWindowResize() {
+
+				camera.aspect = window.innerWidth / window.innerHeight;
+				camera.updateProjectionMatrix();
+
+				renderer.setSize( window.innerWidth, window.innerHeight );
+
+				controls.handleResize();
+
+			}
+
+
+			function onDocumentMouseMove( event ) {
+
+				mouseX = ( event.clientX - windowHalfX ) / 2;
+				mouseY = ( event.clientY - windowHalfY ) / 2;
+
+			}
+
+
+//参考网格
+			function initGrid(){
+                var helper = new THREE.GridHelper( 80, 80 );
+                helper.setColors( 0x0000ff, 0x808080 );
+                helper.position.y = 0;
+				helper.position.x = 0;
+                scene.add( helper );
+            }
+
+				var url="obj/skatepark  test.js";				//animation?
+    			var animation;
+
+ 	var avatar, skeletonHelper;
+
+    var loader = new THREE.JSONLoader();
+    loader.load( url, function( geometry ) {
+        var mt = new THREE.TextureLoader().load('obj/box.jpg');//MeshLambertMaterial
+        var materialTexture = new THREE.MeshBasicMaterial({
+            map: mt,
+            opacity: 1,
+            transparent: true,
+            // blending:THREE.MultiplyBlending,
+            // side: THREE.DoubleSide,
+            // wireframe: true,
+            wireframeLinewidth: 1,
+            skinning: true
+        });
+        //Avatar
+        avatar = new THREE.SkinnedMesh(geometry, materialTexture);
+        avatar.position.set(0, 0, 0);
+        avatar.scale.set(1, 1, 1);
+        scene.add(avatar);
+        avatar.castShadow = true;
+        avatar.receiveShadow = true;
+
+        //skeletonHelper
+        skeletonHelper = new THREE.SkeletonHelper(avatar);
+        skeletonHelper.material.linewidth = 1;
+        skeletonHelper.visible = false;
+        scene.add(skeletonHelper);
+
+        mixer = new THREE.AnimationMixer(avatar);
+
+        var action = mixer.clipAction( geometry.animations[0]);
+        action.setEffectiveTimeScale(1);
+        action.play();
+
+        animate();
+    } );
+
+
+
+
+			function animate() {
+
+				requestAnimationFrame( animate );
+
+				render();
+
+			}
+
+			function render() {
+		        var delta = clock.getDelta();
+		        if(mixer)mixer.update(delta);
+		        if(skeletonHelper) skeletonHelper.update();
+		        renderer.render( scene, camera );
+				controls.update( clock.getDelta() );
+				renderer.render( scene, camera );
+
+			}
+
+			function save() {
+			window.open( renderer.domElement.toDataURL('image/png'), 'mywindow' );
+			return false;
+			}
+		</script>
+
+
+	</body>
+</html>
