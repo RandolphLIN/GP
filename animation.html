@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <title>animation</title>
+
+    <script src="js/three.js"></script>
+    <script src="js/OBJLoader.js"></script>
+        <script src="js/FirstPersonControls.js"></script>
+    <script src="js/OrbitControls.js"></script>
+    
+        <script src="js/model.js"></script>
+        <script src="js/setvoxel.js"></script>
+    <style>
+        body {
+            background:#777;
+            padding:0;
+            margin:0;
+            font-weight: bold;
+            overflow:hidden;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+
+</body>
+</html>
+
+<script>
+    var scene, camera, controls, stats;
+    var renderer, mixer;
+    var mesh;
+    var worldWidth = 128, worldDepth = 128,
+
+            worldHalfWidth = worldWidth / 2,worldHalfDepth = worldDepth / 2;
+    var clock = new THREE.Clock();
+                var windowHalfX = window.innerWidth / 2;
+            var windowHalfY = window.innerHeight / 2;
+    var SCREEN_WIDTH = window.innerWidth;
+    var SCREEN_HEIGHT = window.innerHeight;
+    var container = document.getElementById( 'container' );
+
+
+
+
+    renderer = new THREE.WebGLRenderer( { antialias: true } );
+    renderer.setClearColor( 0xffffff );
+    renderer.setPixelRatio( window.devicePixelRatio );
+    renderer.setSize( SCREEN_WIDTH, SCREEN_HEIGHT );
+    container.appendChild( renderer.domElement );
+
+    scene = new THREE.Scene();
+    var clock = new THREE.Clock();
+
+    window.onresize = function () {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize( window.innerWidth, window.innerHeight );
+    };
+
+    var url="model/skatepark  test.js";
+    var animation;
+
+    if ( camera === undefined ) {
+        camera = new THREE.PerspectiveCamera( 30, SCREEN_WIDTH / SCREEN_HEIGHT, 1, 10000 );
+        camera.position.set( - 200, 0, 200 );
+    }
+    controls = new THREE.OrbitControls( camera );
+
+
+
+    var light = new THREE.HemisphereLight( 0xffffbb, 0x080820, 1 );
+    scene.add(light);
+
+             
+    scene.background = new THREE.CubeTextureLoader()
+    .setPath( 'textures/bgtest/pisa/' )
+    .load( [
+    'px1.png',
+    'nx1.png',
+    'py1.png',
+    'ny1.png',
+    'pz1.png',
+    'nz1.png'
+    ] );
+    /*var m= new THREE.MeshBasicMaterial( { color: 0xffaa00 } )
+    var g = new THREE.SphereGeometry( 10, 10, 10 );
+    var tmesh = new THREE.Mesh( g, m );
+    scene.add( tmesh );*/
+
+    /*  new THREE.ObjectLoader().load( url, function ( geometry ) {
+          scene=geometry;
+
+          var animationClip = geometry.animations[ 0 ];
+          mixer = new THREE.AnimationMixer( scene );
+          mixer.clipAction( animationClip ).play();
+
+          animate();
+      });*/
+    var avatar, skeletonHelper;
+
+    var loader = new THREE.JSONLoader();
+    loader.load( url, function( geometry ) {
+        var mt = new THREE.TextureLoader().load('box.jpg');//MeshLambertMaterial
+        var materialTexture = new THREE.MeshBasicMaterial({
+            map: mt,
+            opacity: 1,
+            transparent: true,
+            // blending:THREE.MultiplyBlending,
+            // side: THREE.DoubleSide,
+            // wireframe: true,
+            wireframeLinewidth: 1,
+            skinning: true
+        });
+        //Avatar
+        avatar = new THREE.SkinnedMesh(geometry, materialTexture);
+        avatar.position.set(0, -40, 0);
+        avatar.scale.set(1, 1, 1);
+        scene.add(avatar);
+        avatar.castShadow = true;
+        avatar.receiveShadow = true;
+
+        //skeletonHelper
+        skeletonHelper = new THREE.SkeletonHelper(avatar);
+        skeletonHelper.material.linewidth = 1;
+        skeletonHelper.visible = false;
+        scene.add(skeletonHelper);
+
+        mixer = new THREE.AnimationMixer(avatar);
+
+        var action = mixer.clipAction( geometry.animations[0]);
+        action.setEffectiveTimeScale(1);
+        action.play();
+
+        animate();
+
+    initGrid();
+    } );
+    function onWindowResize() {
+
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+
+    renderer.setSize( window.innerWidth, window.innerHeight );
+
+    controls.handleResize();
+
+    }
+    function onDocumentMouseMove( event ) {
+
+    mouseX = ( event.clientX - windowHalfX ) / 2;
+    mouseY = ( event.clientY - windowHalfY ) / 2;
+
+    }
+
+//参考网格
+    function initGrid(){
+        var helper = new THREE.GridHelper( 80, 80 );
+        helper.setColors( 0x0000ff, 0x808080 );
+        helper.position.y = 0;
+        helper.position.x = 0;
+        scene.add( helper );
+    }
+
+    function animate() {
+        requestAnimationFrame( animate );
+        render();
+    }
+    function render() {
+        var delta = clock.getDelta();
+
+        controls.update( clock.getDelta() );
+        if(mixer)mixer.update(delta);
+        if(skeletonHelper) skeletonHelper.update();
+        renderer.render( scene, camera );
+    }
+
+</script>
