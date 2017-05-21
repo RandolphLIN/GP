@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>EaselJS: Sprite Sheet Example</title>
+
+<!-- 	<link href="../_assets/css/shared.css" rel="stylesheet" type="text/css"/>
+	<link href="../_assets/css/examples.css" rel="stylesheet" type="text/css"/> -->
+	<script src="js/examples.js"></script>
+
+	<script src="js/preloadjs-NEXT.min.js"></script>
+
+	<script src="js/easeljs-NEXT.combined.js"></script>
+	<!-- We also provide hosted minified versions of all CreateJS libraries.
+	  http://code.createjs.com -->
+	  <style type="text/css">
+		body{
+			overflow: hidden;
+			background-color: #000000;
+			margin: 0;
+			height: 1080px;
+		}
+
+		.canvas1{
+			top: 6%;
+			/*padding-top: -20%;*/
+		  position: relative;
+		  max-width: 1920px;
+		  height: 1080px;
+		  margin: 0 auto;   /*居中*/
+		  overflow: hidden;
+		  
+		}
+
+		#testCanvas{
+			position:relative;
+			width: 110%;
+			margin: 0 auto;
+			background-color: #FFFFFF;
+		}
+	</style>
+
+<script id="editable">
+	var stage, w, h, loader;
+	var sky, grant,grant2, ground, hill, hill2, light;
+
+	function init() {
+		examples.showDistractor();
+		stage = new createjs.Stage("testCanvas");
+
+		// grab canvas width and height for later calculations:
+		w = stage.canvas.width;
+		h = stage.canvas.height;
+
+
+		console.log(w);
+		manifest = [
+			{src: "skater1.png", id: "grant"},
+			{src: "skater1.png", id: "grant2"},
+			{src: "light.png", id: "light"},
+			{src: "light.png", id: "light0"},
+			{src: "light.png", id: "light2"},
+			{src: "light.png", id: "light3"},       
+			{src: "night.png", id: "sky"},
+			{src: "ground1.png", id: "ground"},
+			{src: "building2.png", id: "hill"},
+			{src: "building1.png", id: "hill2"}
+		];
+
+		loader = new createjs.LoadQueue(false);
+		loader.addEventListener("complete", handleComplete);
+		loader.loadManifest(manifest, true, "art/");
+	}
+
+	function handleComplete() {
+		examples.hideDistractor();
+
+		sky = new createjs.Shape();
+		sky.graphics.beginBitmapFill(loader.getResult("sky")).drawRect(0, 0, w, h);
+
+		var groundImg = loader.getResult("ground");
+		ground = new createjs.Shape();
+		ground.graphics.beginBitmapFill(groundImg).drawRect(0, 0, w + groundImg.width, groundImg.height+20 );
+		ground.tileW = groundImg.width;
+		ground.y = h - groundImg.height-3;
+
+		hill = new createjs.Bitmap(loader.getResult("hill"));
+		hill.setTransform(Math.random() * w, h - hill.image.height * 4 - groundImg.height, 4, 4);
+		hill.alpha = 0.5;
+
+		light = new createjs.Bitmap(loader.getResult("light"));
+		light.setTransform(w * 3 / 8, h - light.image.height * 0.8 - groundImg.height, 1.2, 1.2);
+
+		light0 = new createjs.Bitmap(loader.getResult("light0"));
+		light0.setTransform(w , h - light0.image.height * 0.8 - groundImg.height, 1.2, 1.2);
+
+		light2 = new createjs.Bitmap(loader.getResult("light2"));
+		light2.setTransform(w, h - light2.image.height * 1 - groundImg.height, 0.9, 1); 
+
+		light3 = new createjs.Bitmap(loader.getResult("light3"));
+		light3.setTransform(w * 3 / 8, h - light2.image.height * 1 - groundImg.height, 0.9, 1); 
+
+		hill2 = new createjs.Bitmap(loader.getResult("hill2"));
+		hill2.setTransform(Math.random() * w, h - hill2.image.height * 3 - groundImg.height, 3, 3);
+
+		var spriteSheet = new createjs.SpriteSheet({
+				framerate: 30,
+				"images": [loader.getResult("grant")],
+				"frames": {"regX": 82, "height": 125, "count": 24, "regY": 0, "width": 147},			//147 125
+				// define two animations, run (loops, 1.5x speed) and jump (returns to run):
+				"animations": {
+					"run": [0, 23, "run", 0.5],
+					"jump": [0, 23, "run"]
+				}
+			});
+		var spriteSheet2 = new createjs.SpriteSheet({
+				framerate: 30,
+				"images": [loader.getResult("grant")],
+				"frames": {"regX": 82, "height": 125, "count": 24, "regY": 0, "width": 147},			//147 125
+				// define two animations, run (loops, 1.5x speed) and jump (returns to run):
+				"animations": {
+					"run": [0, 23, "run", 0.5],
+					"jump": [0, 23, "run"]
+				}
+			});
+		grant = new createjs.Sprite(spriteSheet, "run");
+		grant.x = 1000;
+		grant.y = 240;
+
+		grant2 = new createjs.Sprite(spriteSheet2, "run");
+		grant2.x = 1100;
+		grant2.y = 230;
+
+
+		stage.addChild(sky, hill, hill2, ground, light2 ,light3 ,grant, grant2, light, light0 );				//决定层次
+		stage.addEventListener("stagemousedown", handleJumpStart);
+
+		createjs.Ticker.timingMode = createjs.Ticker.RAF;
+		createjs.Ticker.addEventListener("tick", tick);
+	}
+
+	function handleJumpStart() {
+		grant.gotoAndPlay("jump");
+	}
+
+	function tick(event) {
+		var deltaS = event.delta / 1000;
+		var position = grant.x - 250 * deltaS;
+		var position2 = grant2.x - 350 * deltaS;
+
+		var grantW = grant.getBounds().width * grant.scaleX;
+		grant.x = (position <= 0 ) ? 1100 : position;
+
+		var grant2W = grant2.getBounds().width * grant.scaleX;
+		grant2.x = (position2 <= 0 ) ? 1000 : position2;
+
+		ground.x = (ground.x - deltaS * 114) % ground.tileW;
+		hill.x = (hill.x - deltaS * 30);
+		if (hill.x + hill.image.width * hill.scaleX <= 0) {
+			hill.x = w;
+		}
+		hill2.x = (hill2.x - deltaS * 45);
+		if (hill2.x + hill2.image.width * hill2.scaleX <= 0) {
+			hill2.x = w;
+		}
+		light.x = (light.x - deltaS * 114);										//大灯
+		if (light.x + light.image.width * light.scaleX <= 0) {
+			light.x = w;
+		}
+		light0.x = (light0.x - deltaS * 114);										//大灯
+		if (light0.x + light0.image.width * light0.scaleX <= 0) {
+			light0.x = w;
+		}
+		light2.x = (light2.x - deltaS * 114);
+		if (light2.x + light2.image.width * light2.scaleX <= 0) {
+			light2.x = w;
+		}
+		light3.x = (light3.x - deltaS * 114);
+		if (light3.x + light3.image.width * light3.scaleX <= 0) {
+			light3.x = w;
+		}
+
+		stage.update(event);
+	}
+</script>
+</head>
+
+<body onload="init();">
+<div class="canvas1">
+	<canvas id="testCanvas" width="960" height="400"></canvas>
+</div>
+
+</body>
+</html>
