@@ -35,11 +35,53 @@
 			#oldie a { color:#fff }
 
 		</style>
+<!-- 导航条 -->
+    <link rel="stylesheet" href="navi/jquery.sidr.dark.css">
+    <!-- Your CSS -->
+    <link rel="stylesheet" href="navi/style.css">
+<!-- 导航条 --> 
+
+        <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+
+
+
 	</head>
 	<body>
+	<!-- 导航条 -->
+       <div id="sidr">
+      <ul>
+        <li><a href="index.html">All Examples</a></li>
+        <li class="active"><a href="#">Dummy 2</a></li>
+        <li><a href="#">Dummy 3</a></li>
+        <li><a id="close-menu-button" href="#">Close menu</a></li>
+      </ul>
+    </div>
+
+
+
+    <div id="overlay"></div>
+
+    <a id="simple-menu" class="menu-button" href="#sidr">Toggle menu</a>
+<!-- 导航条 -->
 
 		<div id="container"><br /><br /><br /><br /><br />生成中...</div>
 		<div id="info">skatepark<br />WSAD控制<a href="index.html">返回</a><a href="javascript:save()">保存图片</a></div>
+			<!-- 导航条 -->
+       <div id="sidr">
+      <ul>
+        <li><a href="index.html">All Examples</a></li>
+        <li class="active"><a href="#">Dummy 2</a></li>
+        <li><a href="#">Dummy 3</a></li>
+        <li><a id="close-menu-button" href="#">Close menu</a></li>
+      </ul>
+    </div>
+
+
+
+    <div id="overlay"></div>
+
+    <a id="simple-menu" class="menu-button" href="#sidr">Toggle menu</a>
+<!-- 导航条 -->
 
 
 		<script src="js/three.js"></script>
@@ -195,6 +237,25 @@
 			}
 		</script>
 
+
+
+<!-- 导航条 -->
+    <script src="navi/jquery.sidr.js"></script>
+
+    <!-- Your code -->
+    <script>
+
+    $(document).ready(function() {
+      $('#simple-menu').sidr({
+        displace: false
+      });
+    });
+
+    $('#overlay, #close-menu-button').click(function () {
+      $.sidr('close', 'sidr');
+    });
+
+    </script>
 
 	</body>
 </html>

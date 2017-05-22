@@ -12,11 +12,69 @@
 	<!-- <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script> -->
 	<script src="js/parallax.js"></script>
 
+<!-- 导航条 -->
+    <link rel="stylesheet" href="navi/jquery.sidr.dark.css">
+    <!-- Your CSS -->
+    <link rel="stylesheet" href="navi/style.css">
+<!-- 导航条 -->  
+ <script type="text/javascript" src="navi/jquery-3.2.1.min.js"></script>
+
 </head>
 <body style="background-color: #FFFFFF">
+
+
+
+
 	<div id="container" class="container" >
+	<!-- 导航条 -->
+       <div id="sidr" style="z-index: 90">
+      <ul>
+        <li><a href="index.html">All Examples</a></li>
+        <li class="active"><a href="#">Dummy 2</a></li>
+        <li><a href="#">Dummy 3</a></li>
+        <li><a id="close-menu-button" href="#">Close menu</a></li>
+      </ul>
+    </div>
+
+
+
+    <div id="overlay"></div>
+
+    <a id="simple-menu" class="menu-button1" href="#sidr">Toggle menu</a>
+<!-- 导航条 -->
 	<div id="start" class="start"></div>	<!--点击区域-->
-	<script src="js/default1.js"></script>
+	<script >window.onload=function(){
+	x();
+	y();
+};
+function x(){
+var img1 =document.getElementById('start');
+img1.addEventListener('mouseup', function(event){
+document.getElementById('start').src="img/s2_btn1.png";
+console.log('up');
+
+window.location.assign("frame2.html");
+
+// var btnX = document.getElementById('scene2').offsetLeft;
+// console.log(btnX);
+},false);
+img1.addEventListener('mousedown', function(event){
+document.getElementById('start').src="img/s2_btn2.png";
+console.log('down');
+},false);};
+
+
+function y(){
+var img1 =document.getElementById('start');
+img1.addEventListener('touchend', function(event){
+document.getElementById('start').src="img/s2_btn1.png";
+
+window.location.assign("frame2.html");
+},false);
+var img1 =document.getElementById('start');
+img1.addEventListener('touchstart', function(event){
+document.getElementById('start').src="img/s2_btn2.png";
+},false);};</script>
 	<div id="one">
 		<ul id="scene1" class="scene1">
 			<!-- <li class="layer" data-depth="1.00"><img src=""></li> -->
@@ -45,5 +103,24 @@
 	<script type="text/javascript">
 		console.log(document.body.offsetWidth );
 	</script>
+
+
+	<!-- 导航条 -->
+    <script src="navi/jquery.sidr.js"></script>
+
+    <!-- Your code -->
+    <script>
+
+    $(document).ready(function() {
+      $('#simple-menu').sidr({
+        displace: false
+      });
+    });
+
+    $('#overlay, #close-menu-button').click(function () {
+      $.sidr('close', 'sidr');
+    });
+
+    </script>
 </body>
 </html>

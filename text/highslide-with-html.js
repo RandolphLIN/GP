@@ -14,8 +14,8 @@ lang : {
 	loadingTitle : 'Click to cancel',
 	focusTitle : 'Click to bring to front',
 	fullExpandTitle : 'Expand to actual size (f)',
-	creditsText : 'Powered by <i>Highslide JS</i>',
-	creditsTitle : 'Go to the Highslide JS homepage',
+	creditsText : 'skatepark',
+	creditsTitle : 'welcome',
 	previousText : 'Previous',
 	nextText : 'Next', 
 	moveText : 'Move',
@@ -52,7 +52,7 @@ padToMinWidth : false, // pad the popup width to make room for wide caption
 fullExpandPosition : 'bottom right',
 fullExpandOpacity : 1,
 showCredits : true, // you can set this to false if you want
-creditsHref : 'http://highslide.com/',
+creditsHref : '',
 creditsTarget : '_self',
 enableKeyListener : true,
 openerTagNames : ['a'], // Add more to allow slideshow indexing

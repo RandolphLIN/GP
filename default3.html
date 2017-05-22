@@ -14,8 +14,25 @@
 	<!-- Scripts -->
 	<script src="js/default.js"></script> 
 	<script src="js/parallax.js"></script>
+
+<!-- 导航条 -->
+    <link rel="stylesheet" href="navi/jquery.sidr.dark.css">
+    <!-- Your CSS -->
+    <link rel="stylesheet" href="navi/style.css">
+<!-- 导航条 -->        
+
+
+    <script type="text/javascript" src="navi/jquery-3.2.1.min.js"></script>
+
+
+
 </head>
 <body style="background-color: #c1c1c1;overflow: scroll;" >
+
+
+
+
+
 <script type="text/javascript">
 window.onload=function(){
 	w();
@@ -28,7 +45,7 @@ img1.addEventListener('mouseup', function(event){
 document.getElementById('img4').src="img/s2_btn3.png";
 console.log('up');
 
-window.location.assign("index.html");
+window.location.assign("equipment.html");
 },false);
 img1.addEventListener('mousedown', function(event){
 document.getElementById('img4').src="img/s2_btn1.png";
@@ -41,7 +58,7 @@ img1.addEventListener('touchend', function(event){
 document.getElementById('img4').src="img/s2_btn3.png";
 console.log('up');
 
-window.location.assign("index.html");
+window.location.assign("equipment.html");
 },false);
 img1.addEventListener('touchstart', function(event){
 document.getElementById('img4').src="img/s2_btn1.png";
@@ -49,9 +66,32 @@ console.log('down');
 },false);};
 </script>
 
-	<div class="container1">
+	<div class="container1" overflow="hidden" width="940px">
+
+<!-- 导航条 -->
+       <div id="sidr">
+      <ul>
+        <li><a href="index.html">All Examples</a></li>
+        <li class="active"><a href="#">Dummy 2</a></li>
+        <li><a href="#">Dummy 3</a></li>
+        <li><a id="close-menu-button" href="#">Close menu</a></li>
+      </ul>
+    </div>
+
+
+
+    <div id="overlay"></div>
+
+    <a id="simple-menu" class="menu-button1" href="#sidr">Toggle menu</a>
+<!-- 导航条 -->
+
+
 		<div class="info">		
-		<img id="img4" src="img/s2_btn3.png"></li>
+		<img id="img4" src="img/s3_btn1.png">
+		<img id="img5" src="img/s3_btn2.png">
+		<img id="img6" src="img/s3_btn3.png">
+		<img id="img7" src="img/solve.png">
+
 	</div>
 		<div class="three">
 			<ul class="scene3" id="scene3">
@@ -74,5 +114,25 @@ console.log('down');
 		var parallax3 = new Parallax(scene3);
 
 	</script>
+
+
+
+<!-- 导航条 -->
+    <script src="navi/jquery.sidr.js"></script>
+
+    <!-- Your code -->
+    <script>
+
+    $(document).ready(function() {
+      $('#simple-menu').sidr({
+        displace: false
+      });
+    });
+
+    $('#overlay, #close-menu-button').click(function () {
+      $.sidr('close', 'sidr');
+    });
+
+    </script>
 </body>
 </html>

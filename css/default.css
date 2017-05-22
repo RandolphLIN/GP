@@ -82,10 +82,29 @@ img {
 }
 
 #img4{
-  width: 3%;
+  width: 2%;
   position: absolute;
-  padding-top:30%;
-  left:90%;
+  padding-top:23%;
+  left:62%;
+}
+#img5{
+  width: 5%;
+  position: absolute;
+  padding-top:34%;
+  left:98%;
+}
+#img6{
+  width: 4%;
+  position: absolute;
+  padding-top:25%;
+  left:19%;
+}
+#img7 {
+  width: 31%;
+  position: absolute;
+  padding-top:5%;
+  left:124%;
+  margin-top: -24px;
 }
 
 /*.two{

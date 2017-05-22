@@ -183,12 +183,54 @@
 		stage.update(event);
 	}
 </script>
+
+<!-- 导航条 -->
+    <link rel="stylesheet" href="navi/jquery.sidr.dark.css">
+    <!-- Your CSS -->
+    <link rel="stylesheet" href="navi/style.css">
+<!-- 导航条 -->        
+
+        <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+
 </head>
 
 <body onload="init();">
-<div class="canvas1">
+<div class="canvas1"><!-- 导航条 -->
+       <div id="sidr">
+      <ul>
+        <li><a href="index.html">All Examples</a></li>
+        <li class="active"><a href="#">Dummy 2</a></li>
+        <li><a href="#">Dummy 3</a></li>
+        <li><a id="close-menu-button" href="#">Close menu</a></li>
+      </ul>
+    </div>
+
+
+
+    <div id="overlay"></div>
+
+    <a id="simple-menu" class="menu-button1" style="top: 0" href="#sidr">Toggle menu</a>
+<!-- 导航条 -->
 	<canvas id="testCanvas" width="960" height="400"></canvas>
 </div>
+
+<!-- 导航条 -->
+    <script src="navi/jquery.sidr.js"></script>
+
+    <!-- Your code -->
+    <script>
+
+    $(document).ready(function() {
+      $('#simple-menu').sidr({
+        displace: false
+      });
+    });
+
+    $('#overlay, #close-menu-button').click(function () {
+      $.sidr('close', 'sidr');
+    });
+
+    </script>
 
 </body>
 </html>

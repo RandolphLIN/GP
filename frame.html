@@ -10,7 +10,7 @@
             height: 100%;
         }
             #animbg{
-                background-image: url(guochang.png);
+                background-image: url(guochang2.jpg);
                 width:100%;
                 height:100%;
                 background-size:cover;
@@ -20,14 +20,47 @@
             #btn{
                 position: absolute;
                 z-index: 99;
-                left: 20px;
-                top: 50px;
+                width: 10%;
+                height: 15%;
+                left: 80%;
+                top: 70%;
+                font-family: Arial;
+                font-weight: bold;
+                font-size:100%;
+                color:#B88E8E;
             }
+
         </style>
+<!-- 导航条 -->
+    <link rel="stylesheet" href="navi/jquery.sidr.dark.css">
+    <!-- Your CSS -->
+    <link rel="stylesheet" href="navi/style.css">
+<!-- 导航条 -->        
+
         <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
 
     </head>
     <body onload="play()">
+
+<!-- 导航条 -->
+       <div id="sidr">
+      <ul>
+        <li><a href="index.html">All Examples</a></li>
+        <li class="active"><a href="#">Dummy 2</a></li>
+        <li><a href="#">Dummy 3</a></li>
+        <li><a id="close-menu-button" href="#">Close menu</a></li>
+      </ul>
+    </div>
+
+
+
+    <div id="overlay"></div>
+
+    <a id="simple-menu" class="menu-button" href="#sidr">Toggle menu</a>
+<!-- 导航条 -->
+
+
+
         <div id="animbg"></div>
                 <script type="text/javascript">
         (function(window){
@@ -50,7 +83,7 @@
                             if(step >= steps){
                                     step = 4;   
                                      $("#btn").remove();
-                                    $("body").append("<button id='btn' onclick='skip()'>继续</button>");
+                                    $("body").append("<button id='btn' onclick='skip()'><font>next</font></button>");
  
                                     // time++;         //循环
                                     //window.location.assign("default2.html");
@@ -110,7 +143,7 @@
             anim.start();
         }
         function skip(){
-            window.location.assign("default2.html");
+            window.location.assign("default3.html");
         }
         window.onresize = function(){
         $("#animbg").remove();
@@ -118,6 +151,25 @@
         play();
         }        
         
+    </script>
+    
+
+<!-- 导航条 -->
+    <script src="navi/jquery.sidr.js"></script>
+
+    <!-- Your code -->
+    <script>
+
+    $(document).ready(function() {
+      $('#simple-menu').sidr({
+        displace: false
+      });
+    });
+
+    $('#overlay, #close-menu-button').click(function () {
+      $.sidr('close', 'sidr');
+    });
+
     </script>
         <!-- <script type="text/javascript"> 
         window.onresize = function(){

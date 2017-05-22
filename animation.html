@@ -7,7 +7,7 @@
 
     <script src="js/three.js"></script>
     <script src="js/OBJLoader.js"></script>
-        <script src="js/FirstPersonControls.js"></script>
+    <script src="js/FirstPersonControls.js"></script>
     <script src="js/OrbitControls.js"></script>
     
         <script src="js/model.js"></script>
@@ -21,9 +21,58 @@
             overflow:hidden;
         }
     </style>
+<!-- 导航条 -->
+    <link rel="stylesheet" href="navi/jquery.sidr.dark.css">
+    <!-- Your CSS -->
+    <link rel="stylesheet" href="navi/style.css">
+<!-- 导航条 -->        
+
+
+    <script type="text/javascript" src="navi/jquery-3.2.1.min.js"></script>
+
 </head>
 <body>
+<!-- 导航条 -->
+       <div id="sidr">
+      <ul>
+        <li><a href="index.html">All Examples</a></li>
+        <li class="active"><a href="#">Dummy 2</a></li>
+        <li><a href="#">Dummy 3</a></li>
+        <li><a id="close-menu-button" href="#">Close menu</a></li>
+      </ul>
+    </div>
+
+
+
+    <div id="overlay"></div>
+
+    <a id="simple-menu" class="menu-button" href="#sidr">Toggle menu</a>
+<!-- 导航条 -->
+
+
 <div id="container"></div>
+
+
+
+<!-- 导航条 -->
+    <script src="navi/jquery.sidr.js"></script>
+
+    <!-- Your code -->
+    <script>
+
+    $(document).ready(function() {
+      $('#simple-menu').sidr({
+        displace: false
+      });
+    });
+
+    $('#overlay, #close-menu-button').click(function () {
+      $.sidr('close', 'sidr');
+      console.log("click");
+    });
+
+    </script>
+<!-- 导航条 -->
 
 </body>
 </html>
