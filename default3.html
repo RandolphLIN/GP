@@ -27,7 +27,7 @@
 
 
 </head>
-<body style="background-color: #c1c1c1;overflow: scroll;" >
+<body style="background-color: #c1c1c1;" >
 
 
 
@@ -68,21 +68,56 @@ console.log('down');
 
 	<div class="container1" overflow="hidden" width="940px">
 
-<!-- 导航条 -->
+  <!-- 导航条 -->
        <div id="sidr">
       <ul>
-        <li><a href="index.html">All Examples</a></li>
-        <li class="active"><a href="#">Dummy 2</a></li>
-        <li><a href="#">Dummy 3</a></li>
+        <li class="active" ><a href="index.html">index</a></li>
+        <li><a href="default2.html">origin</a></li>
+        <li><a href="default3.html">skatepark(2d)</a></li>
+        <li><a href="equipment.html">equipment</a></li>
+        <li><a id="skatepark">3d skatepark</a></li>
         <li><a id="close-menu-button" href="#">Close menu</a></li>
       </ul>
     </div>
+<script type="text/javascript">
+window.onload=function(){
+	sk1();
+	sk2();
+};
 
+function sk1(){
+var skpark =document.getElementById('skatepark');
+skpark.addEventListener('mouseup', function(event){
 
+if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+    window.location.href = "animation.html";
+} else {
+    window.location.href = "index02.html";
+}
+
+},false);
+skpark.addEventListener('mousedown', function(event){
+
+},false);};
+
+function sk2(){
+var skpark =document.getElementById('skatepark');
+skpark.addEventListener('touchend', function(event){
+
+if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+    window.location.href = "animation.html";
+} else {
+    window.location.href = "index02.html";
+}
+},false);
+skpark.addEventListener('touchstart', function(event){
+
+},false);};
+</script>		
 
     <div id="overlay"></div>
 
-    <a id="simple-menu" class="menu-button1" href="#sidr">Toggle menu</a>
+    <a id="simple-menu" class="menu-button1" href="#sidr">btn</a>
 <!-- 导航条 -->
 
 
@@ -96,8 +131,9 @@ console.log('down');
 		<div class="three">
 			<ul class="scene3" id="scene3">
 				<li class="layer" data-depth="0.6"><img class="img4" src="img\scene3\layout2.jpg"></li>
-				<li class="layer" data-depth="0.8"><img class="img4" src="img\scene3\s3_ground.png"></li>
-				<li class="layer" data-depth="0.4"><img class="img4" src="img\scene3\s3_bowl.png"></li>
+				<li class="layer" data-depth="0.3"><img class="img4" src="img\scene3\s3_ground.png"></li>
+				<li class="layer" data-depth="0.3"><img class="img4" src="img\scene3\s3_bowl.png"></li>
+				<li class="layer" data-depth="0.3"><img class="img4" src="img\scene3\skater2.png"></li>
 				<li class="layer" data-depth="0.4"><img class="img4" src="img\scene3\s3_b2.png"></li>
 				<li class="layer" data-depth="0.4"><img class="img4" src="img\scene3\s3_AB.png"></li>
 				<li class="layer" data-depth="0.4"><img class="img4" src="img\scene3\s3_FB.png"></li>

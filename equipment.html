@@ -195,15 +195,58 @@
 </head>
 
 <body onload="init();">
-<div class="canvas1"><!-- 导航条 -->
+<div class="canvas1">
+
+
+<!-- 导航条 -->
        <div id="sidr">
       <ul>
-        <li><a href="index.html">All Examples</a></li>
-        <li class="active"><a href="#">Dummy 2</a></li>
-        <li><a href="#">Dummy 3</a></li>
+        <li class="active" ><a href="index.html">index</a></li>
+        <li><a href="default2.html">origin</a></li>
+        <li><a href="default3.html">skatepark(2d)</a></li>
+        <li><a href="equipment.html">equipment</a></li>
+        <li><a id="skatepark">3d skatepark</a></li>
         <li><a id="close-menu-button" href="#">Close menu</a></li>
       </ul>
     </div>
+
+<script type="text/javascript">
+
+sk1();
+sk2();
+
+function sk1(){
+var skpark =document.getElementById('skatepark');
+skpark.addEventListener('mouseup', function(event){
+
+if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+    window.location.href = "animation.html";
+} else {
+    window.location.href = "index02.html";
+}
+
+},false);
+skpark.addEventListener('mousedown', function(event){
+
+},false);};
+
+function sk2(){
+var skpark =document.getElementById('skatepark');
+skpark.addEventListener('touchend', function(event){
+
+if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+    window.location.href = "animation.html";
+} else {
+    window.location.href = "index02.html";
+}
+},false);
+skpark.addEventListener('touchstart', function(event){
+
+},false);};
+</script>
+
+
+
 
 
 
@@ -211,6 +254,10 @@
 
     <a id="simple-menu" class="menu-button1" style="top: 0" href="#sidr">Toggle menu</a>
 <!-- 导航条 -->
+
+
+
+
 	<canvas id="testCanvas" width="960" height="400"></canvas>
 </div>
 

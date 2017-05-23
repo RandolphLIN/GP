@@ -42,26 +42,100 @@
 <body>
 
 
+<script type="text/javascript">
+window.onload=function(){
+	w();
+	r();
+};
 
-	<div id="container" class="container" >
-<!-- 导航条 -->
+function w(){
+var img1 =document.getElementById('img4');
+img1.addEventListener('mouseup', function(event){
+document.getElementById('img4').src="img/next.png";
+console.log('up');
+
+window.location.assign("frame.html");
+},false);
+img1.addEventListener('mousedown', function(event){
+document.getElementById('img4').src="img/next1.png";
+console.log('down');
+},false);};
+
+function r(){
+var img1 =document.getElementById('img4');
+img1.addEventListener('touchend', function(event){
+document.getElementById('img4').src="img/next.png";
+console.log('up');
+
+window.location.assign("frame.html");
+},false);
+img1.addEventListener('touchstart', function(event){
+document.getElementById('img4').src="img/next1.png";
+console.log('down');
+},false);};
+</script>
+  <!-- 导航条 -->
        <div id="sidr">
       <ul>
-        <li><a href="index.html">All Examples</a></li>
-        <li class="active"><a href="#">Dummy 2</a></li>
-        <li><a href="#">Dummy 3</a></li>
+        <li class="active" ><a href="index.html">index</a></li>
+        <li><a href="default2.html">origin</a></li>
+        <li><a href="default3.html">skatepark(2d)</a></li>
+        <li><a href="equipment.html">equipment</a></li>
+        <li><a id="skatepark">3d skatepark</a></li>
         <li><a id="close-menu-button" href="#">Close menu</a></li>
       </ul>
     </div>
+<script type="text/javascript">
+
+	sk1();
+	sk2();
 
 
+function sk1(){
+var skpark =document.getElementById('skatepark');
+skpark.addEventListener('mouseup', function(event){
+
+if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+    window.location.href = "animation.html";
+} else {
+    window.location.href = "index02.html";
+}
+
+},false);
+skpark.addEventListener('mousedown', function(event){
+
+},false);};
+
+function sk2(){
+var skpark =document.getElementById('skatepark');
+skpark.addEventListener('touchend', function(event){
+
+if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+    window.location.href = "animation.html";
+} else {
+    window.location.href = "index02.html";
+}
+},false);
+skpark.addEventListener('touchstart', function(event){
+
+},false);};
+</script>		
 
     <div id="overlay"></div>
 
-    <a id="simple-menu" class="menu-button1" href="#sidr">Toggle menu</a>
+    <a id="simple-menu" class="menu-button1" href="#sidr">btn</a>
 <!-- 导航条 -->
-		<div class="info">			
-				
+
+
+	<div id="container" class="container" >
+<!--  -->
+		<div class="info">		
+
+
+				<img id="img4" src="img/next.png">
+
+
+
 <div class="highslide-html-content1" id="highslide-html">
 	<div class="highslide-header">
 		<ul>
@@ -166,7 +240,7 @@
 			<li class="layer" data-depth="0.6"><img src="img/s2_bg.jpg"></li>
 			<li class="layer" data-depth="0.66"><img src="img/s2_land.png"></li>
 			<li class="layer" data-depth="0.66"><img src="img/s2_beach.png"></li>
-			<li class="layer" data-depth="0.66"><img src="img/s2_house.png"></li>
+			<li class="layer" data-depth="0.5"><img src="img/s2_house.png"></li>
 			<li class="layer" data-depth="0.5"><img src="img/s2_Bwave.png"></li>
 			<li class="layer" data-depth="0.3"><img src="img/s2_Bwave2.png"></li>
 			<li class="layer" data-depth="0.1"><img src="img/s2_Mwave2.png"></li>

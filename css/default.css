@@ -32,6 +32,7 @@ body {
   padding: -5%;
 }
 .container1 {
+  overflow: hidden;
   position: relative;
   max-width: 1920px;
   margin: 0 auto; 
@@ -90,8 +91,8 @@ img {
 #img5{
   width: 5%;
   position: absolute;
-  padding-top:34%;
-  left:98%;
+  padding-top:33%;
+  left:87%;
 }
 #img6{
   width: 4%;
