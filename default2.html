@@ -23,24 +23,58 @@
 <!-- 导航条 -->        
 
         <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+<!-- test -->
+<script type="text/javascript" src="text/highslide-with-html.js"></script>
+<link rel="stylesheet" type="text/css" href="text/highslide.css" />
 
 <style type="text/css">
 	#btn2{
-	width: 9%;
+	width: 5%;
   	position: absolute;
-  	padding-top:45%;
- 	left:80%;
+  	top:80%;
+ 	left:85%;
+ 	z-index: 80;
 	}
+			#Rotation {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: url(img/popUp.png) no-repeat center center;
+            background-color: rgba(39,39, 39,1);
+            transform-style: preserve-3d;
+            z-index:999;
+            padding-top: 5%;
+            }
+            @media all and (orientation: landscape) {
+                #Rotation {
+                    display: none;
+                }
+            }
+            @media all and (orientation: portrait) {
+                #Rotation {
+                    display: block;
+                }
+            }    	
+
+            .highslide1,.highslide2,.highslide3{
+            	z-index: 80;
+            	margin-top: 20%;
+            	padding-top: 0;				/* 结束继承 */
+            }		
+            .highslide1{
+            	top:-25%;
+            }
+            .highslide2{
+            	top:38%;
+            }
+            .highslide3{
+            	top:4%;
+            }
 </style>
 
 
 
 
-
-
-<!-- test -->
-<script type="text/javascript" src="text/highslide-with-html.js"></script>
-<link rel="stylesheet" type="text/css" href="text/highslide.css" />
 
 
 
@@ -50,7 +84,21 @@
 </script>
 </head>
 <body>
+<img id="btn2" src="img/next.png">
+<div id="Rotation"></div>
 
+		<a href="#" onclick="return hs.htmlExpand(this, { contentId: 'highslide-html' } )"
+			class="highslide1">
+		<img src="img/s2_btn1.png">
+		</a>
+		<a href="#" onclick="return hs.htmlExpand(this, { contentId: 'highslide-html2' } )"
+			class="highslide2">
+		<img src="img/s2_btn2.png">
+		</a>		
+		<a href="#" onclick="return hs.htmlExpand(this, { contentId: 'highslide-html3' } )"
+			class="highslide3">
+		<img src="img/s2_btn3.png">
+		</a>
 
 <script type="text/javascript">
 window.onload=function(){
@@ -143,10 +191,11 @@ skpark.addEventListener('touchstart', function(event){
 Your browser does not support the audio element.
 </audio>
 <!--  -->
+
 		<div class="info">		
 
 
-				<img id="btn2" src="img/next.png">
+				
 
 
 
@@ -228,18 +277,6 @@ Your browser does not support the audio element.
 
 
 
-		<a href="#" onclick="return hs.htmlExpand(this, { contentId: 'highslide-html' } )"
-			class="highslide1">
-		<img src="img/s2_btn1.png">
-		</a>
-		<a href="#" onclick="return hs.htmlExpand(this, { contentId: 'highslide-html2' } )"
-			class="highslide2">
-		<img src="img/s2_btn2.png">
-		</a>		
-		<a href="#" onclick="return hs.htmlExpand(this, { contentId: 'highslide-html3' } )"
-			class="highslide3">
-		<img src="img/s2_btn3.png">
-		</a>
 
 <!-- 
 		<img id="img1" src="img/s2_btn1.png">
