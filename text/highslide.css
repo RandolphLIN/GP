@@ -17,6 +17,9 @@
 .highslide1,.highslide2,.highslide3{
 	width: 3%;
 }
+.highslide4,.highslide5,.highslide6{
+	width: 5%;
+}
 
 .highslide1 {
 	position: absolute;
@@ -39,6 +42,34 @@
 	padding-top: 30%;
     left: 85%;
 }
+
+
+.highslide4 {
+	position: absolute;
+	outline: none;
+	text-decoration: none;
+	padding-top: 10%;
+    left: 25%;
+}
+.highslide5 {
+	position: absolute;
+	outline: none;
+	text-decoration: none;
+	padding-top: 42%;
+    left: 43%;
+}
+.highslide6 {
+	position: absolute;
+	outline: none;
+	text-decoration: none;
+	padding-top: 30%;
+    left: 85%;
+}
+
+
+
+
+
 .highslide img {
 	border: 2px solid silver;
 }

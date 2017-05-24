@@ -2,18 +2,19 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>skatepark</title>
+	<title>origin</title>
 
 	<!-- Behavioral Meta Data -->
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
 	<!-- Styles -->
-	<link rel="stylesheet" type="text/css" href="css/default.css"/>
+	<link rel="stylesheet" type="text/css" href="text/default.css"/>
 
 	<!-- Scripts -->
-	<script src="js/default.js"></script> 
+	 <!-- <script src="js/default.js"></script> -->  <!--点击  测试-->
 	<script src="js/parallax.js"></script>
+
 
 <!-- 导航条 -->
     <link rel="stylesheet" href="navi/jquery.sidr.dark.css">
@@ -21,16 +22,57 @@
     <link rel="stylesheet" href="navi/style.css">
 <!-- 导航条 -->        
 
+        <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+<!-- test -->
+<script type="text/javascript" src="text/highslide-with-html.js"></script>
+<link rel="stylesheet" type="text/css" href="text/highslide.css" />
 
-    <script type="text/javascript" src="navi/jquery-3.2.1.min.js"></script>
+
+<style type="text/css">
+	#btn2{
+	width: 5%;
+  	position: absolute;
+  	padding-top:16%;
+ 	left:21%;
+	}
+	#btn3{
+	width: 3%;
+  	position: absolute;
+  	padding-top:21%;
+ 	left:73%;
+	}
+	.highslide1{
+	padding-top: 31%;
+    left: 33%;
+	}
+	.highslide2{
+	padding-top: 35%;
+    left: 80%;
+	}
+	.highslide3{
+	padding-top: 39%;
+    left: 7%;
+	}
+</style> 
 
 
 
+
+
+
+
+
+
+
+<script type="text/javascript">
+    hs.graphicsDir = 'highslide/graphics/';			
+    hs.outlineType = 'rounded-white';
+</script>
 </head>
-<body style="background-color: #c1c1c1;" >
-
-
-
+<body>
+    <audio src="Hit The Ground (Superman)_The Big Pink.mp3" autoplay="autoplay" loop="loop">
+    Your browser does not support the audio element.
+    </audio>
 
 
 <script type="text/javascript">
@@ -40,34 +82,42 @@ window.onload=function(){
 };
 
 function w(){
-var img1 =document.getElementById('img4');
+var img1 =document.getElementById('btn2');
 img1.addEventListener('mouseup', function(event){
-document.getElementById('img4').src="img/s2_btn3.png";
-console.log('up');
 
-window.location.assign("equipment.html");
+document.getElementById('btn2').src="img/next01.png";
+
+if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+    window.location.href = "animation.html";
+} else {
+    window.location.href = "index02.html";
+}
+
 },false);
 img1.addEventListener('mousedown', function(event){
-document.getElementById('img4').src="img/s2_btn1.png";
-console.log('down');
+
+document.getElementById('btn2').src="img/next00.png";
 },false);};
 
 function r(){
-var img1 =document.getElementById('img4');
+var img1 =document.getElementById('btn2');
 img1.addEventListener('touchend', function(event){
-document.getElementById('img4').src="img/s2_btn3.png";
-console.log('up');
 
-window.location.assign("equipment.html");
+
+document.getElementById('btn2').src="img/next01.png";
+
+if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+    window.location.href = "animation.html";
+} else {
+    window.location.href = "index02.html";
+}
+
 },false);
 img1.addEventListener('touchstart', function(event){
-document.getElementById('img4').src="img/s2_btn1.png";
-console.log('down');
+
+document.getElementById('btn2').src="img/next00.png";
 },false);};
 </script>
-
-	<div class="container1" overflow="hidden" width="940px">
-
   <!-- 导航条 -->
        <div id="sidr">
       <ul>
@@ -79,11 +129,29 @@ console.log('down');
         <li><a id="close-menu-button" href="#">Close menu</a></li>
       </ul>
     </div>
+	
+
+    <div id="overlay"></div>
+
+    <a id="simple-menu" class="menu-button1" href="#sidr">btn</a>
+<!-- 导航条 -->
+
+
+	<div id="container" class="container" >
+<!--  -->
+		<div class="info">		
+
+
+				<img id="btn2" src="img/next01.png">
+				<img id="btn3" src="img/s3_btn1.png">
+
 <script type="text/javascript">
-window.onload=function(){
+
 	sk1();
 	sk2();
-};
+	btn31();
+	btn32();
+
 
 function sk1(){
 var skpark =document.getElementById('skatepark');
@@ -113,24 +181,129 @@ if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
 skpark.addEventListener('touchstart', function(event){
 
 },false);};
-</script>		
-
-    <div id="overlay"></div>
-
-    <a id="simple-menu" class="menu-button1" href="#sidr">btn</a>
-<!-- 导航条 -->
 
 
-		<div class="info">		
-		<img id="img4" src="img/s3_btn1.png">
-		<img id="img5" src="img/s3_btn2.png">
-		<img id="img6" src="img/s3_btn3.png">
-		<img id="img7" src="img/solve.png">
+function btn31(){
+var btn3 =document.getElementById('btn3');
+btn3.addEventListener('mouseup', function(event){
+
+window.location.href = "equipment.html";
+
+
+},false);
+btn3.addEventListener('mousedown', function(event){
+
+},false);};
+
+function btn32(){
+var btn3 =document.getElementById('btn3');
+btn3.addEventListener('touchend', function(event){
+
+
+window.location.href = "equipment.html";
+
+},false);
+btn3.addEventListener('touchstart', function(event){
+
+},false);};
+</script>	
+
+<div class="highslide-html-content1" id="highslide-html">
+	<div class="highslide-header">
+		<ul>
+			<li class="highslide-move">
+				<a href="#" onclick="return false">Move</a>
+			</li>
+			<li class="highslide-close">
+				<a href="#" onclick="return hs.close(this)">Close</a>
+			</li>
+		</ul>
+	</div>
+	<div class="highslide-body">
+1
+	</div>
+    <div class="highslide-footer">
+        <div>
+            <span class="highslide-resize" title="Resize">
+                <span></span>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="highslide-html-content1" id="highslide-html2">
+	<div class="highslide-header">
+		<ul>
+			<li class="highslide-move">
+				<a href="#" onclick="return false">Move</a>
+			</li>
+			<li class="highslide-close">
+				<a href="#" onclick="return hs.close(this)">Close</a>
+			</li>
+		</ul>
+	</div>
+	<div class="highslide-body">
+
+2
+	</div>
+    <div class="highslide-footer">
+        <div>
+            <span class="highslide-resize" title="Resize">
+                <span></span>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="highslide-html-content1" id="highslide-html3">
+	<div class="highslide-header">
+		<ul>
+			<li class="highslide-move">
+				<a href="#" onclick="return false">Move</a>
+			</li>
+			<li class="highslide-close">
+				<a href="#" onclick="return hs.close(this)">Close</a>
+			</li>
+		</ul>
+	</div>
+	<div class="highslide-body">
+3
+	</div>
+    <div class="highslide-footer">
+        <div>
+            <span class="highslide-resize" title="Resize">
+                <span></span>
+            </span>
+        </div>
+    </div>
+</div>
+
+
+
+		<a href="#" onclick="return hs.htmlExpand(this, { contentId: 'highslide-html' } )"
+			class="highslide1">
+		<img src="img/s3_btn3.png">
+		</a>
+		<a href="#" onclick="return hs.htmlExpand(this, { contentId: 'highslide-html2' } )"
+			class="highslide2">
+		<img src="img/s3_btn2.png">
+		</a>		
+		<a href="#" onclick="return hs.htmlExpand(this, { contentId: 'highslide-html3' } )"
+			class="highslide3">
+		<img src="img/s2_btn3.png">
+		</a>
+
+<!-- 
+		<img id="img1" src="img/s2_btn1.png">
+		<img id="img2" src="img/s2_btn2.png">
+		<img id="img3" src="img/s2_btn3.png"> -->
 
 	</div>
-		<div class="three">
-			<ul class="scene3" id="scene3">
-				<li class="layer" data-depth="0.6"><img class="img4" src="img\scene3\layout2.jpg"></li>
+
+	<div class="three">
+			<ul id="scene3" class="scene3">
+			<!-- <li class="layer" data-depth="1.00"><img src=""></li>-->	<!--不许上下移动--> 
+			<li class="layer" data-depth="0.6"><img class="img4" src="img\scene3\layout2.jpg"></li>
 				<li class="layer" data-depth="0.3"><img class="img4" src="img\scene3\s3_ground.png"></li>
 				<li class="layer" data-depth="0.3"><img class="img4" src="img\scene3\s3_bowl.png"></li>
 				<li class="layer" data-depth="0.3"><img class="img4" src="img\scene3\skater2.png"></li>
@@ -140,17 +313,15 @@ skpark.addEventListener('touchstart', function(event){
 				<li class="layer" data-depth="0.45"><img class="img4" src="img\scene3\s3_b.png"></li>
 				<li class="layer" data-depth="0.45"><img class="img4" src="img\scene3\s3_skater2.png"></li>
 				<li class="layer" data-depth="0.3"><img class="img4" src="img\scene3\s3_skater.png"></li>
-			</ul>
+		</ul>
+		<!-- <button onclick="removeDiv()">change</button> -->
 		</div>
 	</div>
+	</div>
 	<script type="text/javascript">
-	
-
 		var scene3 = document.getElementById('scene3');
-		var parallax3 = new Parallax(scene3);
-
+		var parallax2 = new Parallax(scene3);
 	</script>
-
 
 
 <!-- 导航条 -->

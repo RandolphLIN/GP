@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>skatepark</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<style>
+			body {
+				color: #61443e;
+				font-family:Monospace;
+				font-size:13px;
+				text-align:center;
+
+				background-color: #bfd1e5;
+				margin: 0px;
+				overflow: hidden;
+			}
+
+			#info {
+				position: absolute;
+				top: 0px; width: 100%;
+				padding: 5px;
+			}
+
+			a {
+
+				color: #a06851;
+			}
+
+			#oldie {
+				background:rgb(100,0,0) !important;
+				color:#fff !important;
+				margin-top:10em !important;
+			}
+			#oldie a { color:#fff }
+
+		</style>
+<!-- 导航条 -->
+    <link rel="stylesheet" href="navi/jquery.sidr.dark.css">
+    <!-- Your CSS -->
+    <link rel="stylesheet" href="navi/style.css">
+<!-- 导航条 --> 
+
+        <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+
+
+
+	</head>
+	<body>
+  <!-- 导航条 -->
+       <div id="sidr">
+      <ul>
+        <li class="active" ><a href="index.html">index</a></li>
+        <li><a href="default2.html">origin</a></li>
+        <li><a href="default3.html">skatepark(2d)</a></li>
+        <li><a href="equipment.html">equipment</a></li>
+        <li><a id="skatepark">3d skatepark</a></li>
+        <li><a id="close-menu-button" href="#">Close menu</a></li>
+      </ul>
+    </div>
+<script type="text/javascript">
+
+    sk1();
+    sk2();
+
+
+function sk1(){
+var skpark =document.getElementById('skatepark');
+skpark.addEventListener('mouseup', function(event){
+
+if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+    window.location.href = "animation.html";
+} else {
+    window.location.href = "index02.html";
+}
+
+},false);
+skpark.addEventListener('mousedown', function(event){
+
+},false);};
+
+function sk2(){
+var skpark =document.getElementById('skatepark');
+skpark.addEventListener('touchend', function(event){
+
+if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+    window.location.href = "animation.html";
+} else {
+    window.location.href = "index02.html";
+}
+},false);
+skpark.addEventListener('touchstart', function(event){
+
+},false);};
+</script>       
+
+    <div id="overlay"></div>
+
+    <a id="simple-menu" class="menu-button1" href="#sidr">btn</a>
+<!-- 导航条 -->
+
+
+		<script src="js/three.js"></script>
+
+		<script src="js/OBJLoader.js"></script>
+		<script src="js/setvoxel.js"></script>
+		<script src="js/FirstPersonControls.js"></script>
+    	<script src="js/OrbitControls.js"></script>
+		<script src="js/model.js"></script>				<!--导入模型-->
+		<script>
+
+
+			var container, stats;
+
+			var camera, controls, scene, renderer;
+
+			var mesh;
+
+
+			// var a = new THREE.Vector3( 100, 100, 0 );
+
+			var worldWidth = 128, worldDepth = 128,
+
+			worldHalfWidth = worldWidth / 2, worldHalfDepth = worldDepth / 2;
+
+			var clock = new THREE.Clock();
+
+			var windowHalfX = window.innerWidth / 2;
+			var windowHalfY = window.innerHeight / 2;
+
+
+			init();
+			animate();
+			initGrid();
+
+			function init() {
+
+				container = document.getElementById( 'container' );
+
+				camera = new THREE.PerspectiveCamera( 60, window.innerWidth / window.innerHeight, 1, 20000 );
+
+				camera.position.x=-60;
+				camera.position.y=20;
+				camera.position.z=-57;	
+				
+				controls = new THREE.FirstPersonControls( camera );
+
+				controls.movementSpeed = 25;
+				controls.lookSpeed = 0.2;
+				controls.lookVertical = true;
+
+				scene = new THREE.Scene();
+//背景				
+				scene.background = new THREE.CubeTextureLoader()
+              .setPath( 'textures/bgtest/pisa/' )
+              .load( [
+              'px1.png',
+              'nx1.png',
+              'py1.png',
+              'ny1.png',
+              'pz1.png',
+              'nz1.png'
+              ] );
+	
+
+
+
+
+
+				// camera.lookAt( scene.position );
+
+
+
+				// var ambientLight = new THREE.AmbientLight( 0xF9F89A );
+				// scene.add( ambientLight );
+
+				// var directionalLight = new THREE.DirectionalLight( 0xECF360, 2 );
+				// directionalLight.position.set( 1, 1, 0.5 ).normalize();
+				// scene.add( directionalLight );
+
+
+				var light = new THREE.HemisphereLight( 0xffffbb, 0x080820, 1 );
+				scene.add(light);
+
+
+				renderer = new THREE.WebGLRenderer();
+				renderer.setClearColor( 0xbfd1e5 );
+				renderer.setPixelRatio( window.devicePixelRatio );
+				renderer.setSize( window.innerWidth, window.innerHeight );
+
+				container.innerHTML = "";
+
+				container.appendChild( renderer.domElement );
+
+
+				window.addEventListener( 'resize', onWindowResize, false );
+
+
+
+
+				document.addEventListener( 'mousemove', onDocumentMouseMove, false );   //防止镜头跑偏
+
+			}
+
+			function onWindowResize() {
+
+				camera.aspect = window.innerWidth / window.innerHeight;
+				camera.updateProjectionMatrix();
+
+				renderer.setSize( window.innerWidth, window.innerHeight );
+
+				controls.handleResize();
+
+			}
+
+
+			function onDocumentMouseMove( event ) {
+
+				mouseX = ( event.clientX - windowHalfX ) / 2;
+				mouseY = ( event.clientY - windowHalfY ) / 2;
+
+			}
+
+
+//参考网格
+			function initGrid(){
+                var helper = new THREE.GridHelper( 80, 80 );
+                helper.setColors( 0x0000ff, 0x808080 );
+                helper.position.y = 0;
+				helper.position.x = 0;
+                scene.add( helper );
+            }
+
+
+			function animate() {
+
+				requestAnimationFrame( animate );
+
+				render();
+
+			}
+
+			function render() {
+
+				controls.update( clock.getDelta() );
+				renderer.render( scene, camera );
+
+			}
+
+			function save() {
+			window.open( renderer.domElement.toDataURL('image/png'), 'mywindow' );
+			return false;
+			}
+		</script>
+
+
+
+<!-- 导航条 -->
+    <script src="navi/jquery.sidr.js"></script>
+
+    <!-- Your code -->
+    <script>
+
+    $(document).ready(function() {
+      $('#simple-menu').sidr({
+        displace: false
+      });
+    });
+
+    $('#overlay, #close-menu-button').click(function () {
+      $.sidr('close', 'sidr');
+    });
+
+    </script>
+
+	</body>
+</html>

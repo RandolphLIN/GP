@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>skatepark</title>
+
+	<!-- Behavioral Meta Data -->
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+	<!-- Styles -->
+	<link rel="stylesheet" type="text/css" href="css/default.css"/>
+
+	<!-- Scripts -->
+	<script src="js/default.js"></script> 
+	<script src="js/parallax.js"></script>
+
+<!-- 导航条 -->
+    <link rel="stylesheet" href="navi/jquery.sidr.dark.css">
+    <!-- Your CSS -->
+    <link rel="stylesheet" href="navi/style.css">
+<!-- 导航条 -->        
+
+
+    <script type="text/javascript" src="navi/jquery-3.2.1.min.js"></script>
+
+
+
+</head>
+<body style="background-color: #c1c1c1;" >
+
+    <audio src="Hit The Ground (Superman)_The Big Pink.mp3" autoplay="autoplay" loop="loop">
+    Your browser does not support the audio element.
+    </audio>
+
+
+
+<script type="text/javascript">
+window.onload=function(){
+	w();
+	r();
+};
+
+function w(){
+var img1 =document.getElementById('img4');
+img1.addEventListener('mouseup', function(event){
+document.getElementById('img4').src="img/s2_btn3.png";
+console.log('up');
+
+window.location.assign("equipment.html");
+},false);
+img1.addEventListener('mousedown', function(event){
+document.getElementById('img4').src="img/s2_btn1.png";
+console.log('down');
+},false);};
+
+function r(){
+var img1 =document.getElementById('img4');
+img1.addEventListener('touchend', function(event){
+document.getElementById('img4').src="img/s2_btn3.png";
+console.log('up');
+
+window.location.assign("equipment.html");
+},false);
+img1.addEventListener('touchstart', function(event){
+document.getElementById('img4').src="img/s2_btn1.png";
+console.log('down');
+},false);};
+</script>
+
+	<div class="container1" overflow="hidden" width="940px">
+
+  <!-- 导航条 -->
+       <div id="sidr">
+      <ul>
+        <li class="active" ><a href="index.html">index</a></li>
+        <li><a href="default2.html">origin</a></li>
+        <li><a href="default3.html">skatepark(2d)</a></li>
+        <li><a href="equipment.html">equipment</a></li>
+        <li><a id="skatepark">3d skatepark</a></li>
+        <li><a id="close-menu-button" href="#">Close menu</a></li>
+      </ul>
+    </div>
+<script type="text/javascript">
+window.onload=function(){
+	sk1();
+	sk2();
+};
+
+function sk1(){
+var skpark =document.getElementById('skatepark');
+skpark.addEventListener('mouseup', function(event){
+
+if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+    window.location.href = "animation.html";
+} else {
+    window.location.href = "index02.html";
+}
+
+},false);
+skpark.addEventListener('mousedown', function(event){
+
+},false);};
+
+function sk2(){
+var skpark =document.getElementById('skatepark');
+skpark.addEventListener('touchend', function(event){
+
+if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+    window.location.href = "animation.html";
+} else {
+    window.location.href = "index02.html";
+}
+},false);
+skpark.addEventListener('touchstart', function(event){
+
+},false);};
+</script>		
+
+    <div id="overlay"></div>
+
+    <a id="simple-menu" class="menu-button1" href="#sidr">btn</a>
+<!-- 导航条 -->
+
+
+		<div class="info">		
+		<img id="img4" src="img/s3_btn1.png">
+		<img id="img5" src="img/s3_btn2.png">
+		<img id="img6" src="img/s3_btn3.png">
+		<img id="img7" src="img/solve.png">
+
+	</div>
+		<div class="three">
+			<ul class="scene3" id="scene3">
+				<li class="layer" data-depth="0.6"><img class="img4" src="img\scene3\layout2.jpg"></li>
+				<li class="layer" data-depth="0.3"><img class="img4" src="img\scene3\s3_ground.png"></li>
+				<li class="layer" data-depth="0.3"><img class="img4" src="img\scene3\s3_bowl.png"></li>
+				<li class="layer" data-depth="0.3"><img class="img4" src="img\scene3\skater2.png"></li>
+				<li class="layer" data-depth="0.4"><img class="img4" src="img\scene3\s3_b2.png"></li>
+				<li class="layer" data-depth="0.4"><img class="img4" src="img\scene3\s3_AB.png"></li>
+				<li class="layer" data-depth="0.4"><img class="img4" src="img\scene3\s3_FB.png"></li>
+				<li class="layer" data-depth="0.45"><img class="img4" src="img\scene3\s3_b.png"></li>
+				<li class="layer" data-depth="0.45"><img class="img4" src="img\scene3\s3_skater2.png"></li>
+				<li class="layer" data-depth="0.3"><img class="img4" src="img\scene3\s3_skater.png"></li>
+			</ul>
+		</div>
+	</div>
+	<script type="text/javascript">
+	
+
+		var scene3 = document.getElementById('scene3');
+		var parallax3 = new Parallax(scene3);
+
+	</script>
+
+
+
+<!-- 导航条 -->
+    <script src="navi/jquery.sidr.js"></script>
+
+    <!-- Your code -->
+    <script>
+
+    $(document).ready(function() {
+      $('#simple-menu').sidr({
+        displace: false
+      });
+    });
+
+    $('#overlay, #close-menu-button').click(function () {
+      $.sidr('close', 'sidr');
+    });
+
+    </script>
+</body>
+</html>

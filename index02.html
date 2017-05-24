@@ -59,10 +59,10 @@
       </ul>
     </div>
 <script type="text/javascript">
-window.onload=function(){
+
     sk1();
     sk2();
-};
+
 
 function sk1(){
 var skpark =document.getElementById('skatepark');
@@ -100,12 +100,17 @@ skpark.addEventListener('touchstart', function(event){
 <!-- 导航条 -->
 
 
+
+
+		<div id="container"><br /><br /><br /><br /><br />生成中...</div>
+		<div id="info">skatepark<br />WSAD控制<a href="index.html">返回</a><a href="javascript:save()">保存图片</a></div>
+
+
 		<script src="js/three.js"></script>
 
 		<script src="js/OBJLoader.js"></script>
 		<script src="js/setvoxel.js"></script>
 		<script src="js/FirstPersonControls.js"></script>
-    	<script src="js/OrbitControls.js"></script>
 		<script src="js/model.js"></script>				<!--导入模型-->
 		<script>
 
@@ -121,7 +126,7 @@ skpark.addEventListener('touchstart', function(event){
 
 			var worldWidth = 128, worldDepth = 128,
 
-			worldHalfWidth = worldWidth / 2, worldHalfDepth = worldDepth / 2;
+			worldHalfWidth = worldWidth / 2, worldHalfDepth = worldDepth / 2
 
 			var clock = new THREE.Clock();
 
@@ -252,9 +257,6 @@ skpark.addEventListener('touchstart', function(event){
 			return false;
 			}
 		</script>
-
-
-
 <!-- 导航条 -->
     <script src="navi/jquery.sidr.js"></script>
 

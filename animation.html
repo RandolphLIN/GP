@@ -148,8 +148,8 @@ skpark.addEventListener('touchstart', function(event){
     var animation;
 
     if ( camera === undefined ) {
-        camera = new THREE.PerspectiveCamera( 30, SCREEN_WIDTH / SCREEN_HEIGHT, 1, 10000 );
-        camera.position.set( - 200, 0, 200 );
+        camera = new THREE.PerspectiveCamera( 60, SCREEN_WIDTH / SCREEN_HEIGHT, 1, 10000 );
+        camera.position.set( - 60, 20, -57 );
     }
     controls = new THREE.OrbitControls( camera );
 
@@ -187,7 +187,7 @@ skpark.addEventListener('touchstart', function(event){
 
     var loader = new THREE.JSONLoader();
     loader.load( url, function( geometry ) {
-        var mt = new THREE.TextureLoader().load('box.jpg');//MeshLambertMaterial
+        var mt = new THREE.TextureLoader().load('model/timg.jpg');//MeshLambertMaterial
         var materialTexture = new THREE.MeshBasicMaterial({
             map: mt,
             opacity: 1,
@@ -200,7 +200,7 @@ skpark.addEventListener('touchstart', function(event){
         });
         //Avatar
         avatar = new THREE.SkinnedMesh(geometry, materialTexture);
-        avatar.position.set(0, -40, 0);
+        avatar.position.set(0, 0, 0);
         avatar.scale.set(1, 1, 1);
         scene.add(avatar);
         avatar.castShadow = true;

@@ -24,6 +24,16 @@
 
         <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
 
+<style type="text/css">
+	#btn2{
+	width: 9%;
+  	position: absolute;
+  	padding-top:45%;
+ 	left:80%;
+	}
+</style>
+
+
 
 
 
@@ -49,28 +59,28 @@ window.onload=function(){
 };
 
 function w(){
-var img1 =document.getElementById('img4');
+var img1 =document.getElementById('btn2');
 img1.addEventListener('mouseup', function(event){
-document.getElementById('img4').src="img/next.png";
+document.getElementById('btn2').src="img/next.png";
 console.log('up');
 
 window.location.assign("frame.html");
 },false);
 img1.addEventListener('mousedown', function(event){
-document.getElementById('img4').src="img/next1.png";
+document.getElementById('btn2').src="img/next1.png";
 console.log('down');
 },false);};
 
 function r(){
-var img1 =document.getElementById('img4');
+var img1 =document.getElementById('btn2');
 img1.addEventListener('touchend', function(event){
-document.getElementById('img4').src="img/next.png";
+document.getElementById('btn2').src="img/next.png";
 console.log('up');
 
 window.location.assign("frame.html");
 },false);
 img1.addEventListener('touchstart', function(event){
-document.getElementById('img4').src="img/next1.png";
+document.getElementById('btn2').src="img/next1.png";
 console.log('down');
 },false);};
 </script>
@@ -127,12 +137,16 @@ skpark.addEventListener('touchstart', function(event){
 <!-- 导航条 -->
 
 
-	<div id="container" class="container" >
+	<div id="container" class="container">
+
+<audio src="wave.mp3" autoplay="autoplay" loop="loop">
+Your browser does not support the audio element.
+</audio>
 <!--  -->
 		<div class="info">		
 
 
-				<img id="img4" src="img/next.png">
+				<img id="btn2" src="img/next.png">
 
 
 
