@@ -59,7 +59,16 @@
     <body onload="play()">
     <div id="Rotation"></div>
     <img src='img/next.png' id='btn' alt='' />
-    <audio src="wave2.mp3" autoplay="autoplay" loop="loop">
+
+
+
+    <!-- <audio src="wave2.mp3" autoplay="autoplay" loop="loop"> -->
+    <audio id='media' src="wave2.mp3" autoplay="autoplay" loop="loop">           <!--仅解决微信上的问题-->
+<script type="text/javascript">
+document.addEventListener("WeixinJSBridgeReady", function () { 
+      document.getElementById('media').play(); 
+}, false);</script>
+
     Your browser does not support the audio element.
     </audio>
 

@@ -100,10 +100,17 @@
 </script>
 </head>
 <body>
+
+
 <div id="Rotation"></div>
-    <audio src="Hit The Ground (Superman)_The Big Pink.mp3" autoplay="autoplay" loop="loop">
-    Your browser does not support the audio element.
-    </audio>
+<!-- <audio src="Hit The Ground (Superman)_The Big Pink.mp3" autoplay="autoplay" loop="loop"> -->
+<audio id='media' src="Hit The Ground (Superman)_The Big Pink.mp3" autoplay="autoplay" loop="loop">           <!--仅解决微信上的问题-->
+<script type="text/javascript">
+document.addEventListener("WeixinJSBridgeReady", function () { 
+      document.getElementById('media').play(); 
+}, false);</script>
+Your browser does not support the audio element.
+</audio>
 
 
 <script type="text/javascript">
