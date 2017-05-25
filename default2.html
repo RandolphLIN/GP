@@ -187,7 +187,14 @@ skpark.addEventListener('touchstart', function(event){
 
 	<div id="container" class="container">
 
-<audio src="wave.mp3" autoplay="autoplay" loop="loop">
+<audio id='media' src="wave.mp3" autoplay="autoplay" loop="loop">
+<script type="text/javascript">
+document.addEventListener("WeixinJSBridgeReady", function () { 
+      document.getElementById('media').play(); 
+}, false);</script>
+
+
+
 Your browser does not support the audio element.
 </audio>
 <!--  -->
