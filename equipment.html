@@ -59,12 +59,22 @@
                 display: block;
             }
         }
+        #btns{
+        	position:absolute;
+        	top: 20px;
+        	left: 20px;
+        	width: 30%;
+        	height: 20%;
+
+        }
         button{
         	z-index:999;
         	position: relative;
-        	top: 134px;
-        	left: 461px;
+        	top: 20px;
+        	left: 20px;
         }
+
+
 	</style>
 
 <script id="editable">
@@ -258,10 +268,8 @@
 </head>
 
 <body onload="init();">
-<!-- 
-<button z-index="99999" onclick="helmet()" value="1">helmet</button><br>
-<button z-index="99999" onclick="cuff()" value="2">cuff</button><br>
-<button z-index="99999" onclick="butt()" value="3">bottom</button><br> -->
+	
+
 
 <div id="Rotation"></div>
 
@@ -322,7 +330,7 @@ skpark.addEventListener('touchstart', function(event){
 
     <div id="overlay"></div>
 
-    <a id="simple-menu" class="menu-button1" style="top: 0" href="#sidr">Toggle menu</a>
+    <a id="simple-menu" class="menu-button1" style="top: 5%" href="#sidr">Toggle menu</a>
 <!-- 导航条 -->
 
 
@@ -348,6 +356,10 @@ skpark.addEventListener('touchstart', function(event){
     });
 
     </script>
-
+<div id="btns">
+    <button z-index="99999" onclick="helmet()" value="1">helmet</button><br>
+	<button z-index="99999" onclick="cuff()" value="2">cuff</button><br>
+	<button z-index="99999" onclick="butt()" value="3">bottom</button><br>
+</div>
 </body>
 </html>
