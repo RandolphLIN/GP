@@ -4,7 +4,8 @@ body {
   background: #111;
   color: #666;
   margin: 0;
-  overflow: hidden;
+  padding:0;
+  /*overflow: hidden;*/
 }
 #Rotation{
   padding-top: 5%;
