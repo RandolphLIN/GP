@@ -24,7 +24,7 @@
 		}
 
 		.canvas1{
-			top: 6%;
+			/*top: 6%;*/
 			/*padding-top: -20%;*/
 		  position: relative;
 		  max-width: 1920px;
@@ -58,6 +58,12 @@
             #Rotation {
                 display: block;
             }
+        }
+        button{
+        	z-index:999;
+        	position: relative;
+        	top: 134px;
+        	left: 461px;
         }
 	</style>
 
@@ -166,8 +172,8 @@
 			});
 
 		gear = new createjs.Sprite(spriteSheet0, "breath");
-		gear.x = 500;
-		gear.y = 190;		
+		gear.x = 550;
+		gear.y = 220;		
 
 
 		grant = new createjs.Sprite(spriteSheet, "run");
@@ -253,9 +259,9 @@
 
 <body onload="init();">
 
-<button z-index="99999" onclick="helmet()" value="1">helmet</button>
-<button z-index="99999" onclick="cuff()" value="2">cuff</button>
-<button z-index="99999" onclick="butt()" value="3">bottom</button>
+<button z-index="99999" onclick="helmet()" value="1">helmet</button><br>
+<button z-index="99999" onclick="cuff()" value="2">cuff</button><br>
+<button z-index="99999" onclick="butt()" value="3">bottom</button><br>
 
 <div id="Rotation"></div>
 
