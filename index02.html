@@ -125,7 +125,7 @@ skpark.addEventListener('touchstart', function(event){
 
 
 		<div id="container"><br /><br /><br /><br /><br />生成中...</div>
-		<div id="info">skatepark<br />WSAD控制<a href="index.html">返回</a><a href="javascript:save()">保存图片</a></div>
+		<div id="info">skatepark<br />WSAD控制<a href="index.html">返回</a><a href="javascript:save()">save .png</a></div>
 
 
 		<script src="js/three.js"></script>
@@ -266,7 +266,10 @@ skpark.addEventListener('touchstart', function(event){
 				render();
 
 			}
-
+			function save() {
+			window.open( renderer.domElement.toDataURL('image/png'), 'mywindow' );
+			return false;
+			}
 			function render() {
 
 				controls.update( clock.getDelta() );
@@ -274,10 +277,7 @@ skpark.addEventListener('touchstart', function(event){
 
 			}
 
-			function save() {
-			window.open( renderer.domElement.toDataURL('image/png'), 'mywindow' );
-			return false;
-			}
+
 		</script>
 <!-- 导航条 -->
     <script src="navi/jquery.sidr.js"></script>

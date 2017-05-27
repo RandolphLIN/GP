@@ -3,23 +3,51 @@
     <meta charset="utf-8">
         <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+
+    <!-- Styles -->
+    <link rel="stylesheet" type="text/css" href="text/default.css"/>
+
+    <!-- Scripts -->
+     <!-- <script src="js/default.js"></script> -->  <!--点击  测试-->
+    <script src="js/parallax.js"></script>
+    <!-- 导航条 -->
+    <link rel="stylesheet" href="navi/jquery.sidr.dark.css">
+    <!-- Your CSS -->
+    <link rel="stylesheet" href="navi/style.css">
+    <!-- 导航条 -->        
+    <script type="text/javascript" src="navi/jquery-3.2.1.min.js"></script>
+    <!-- test -->
+    <script type="text/javascript" src="text/highslide-with-html.js"></script>
+    <link rel="stylesheet" type="text/css" href="text/highslide.css" />
+
+    <script type="text/javascript">
+    hs.graphicsDir = 'highslide/graphics/';         
+    hs.outlineType = 'rounded-white';
+</script>
+
         <style type="text/css">
         body{
             background-color: #000000;
             width: 100%;
             height: 100%;
         }
-            #animbg{                                  
+            #animbg{  
+                z-index:998;
+                top: 0;   
+                position: absolute;                           
                 background-image: url(guochang1.jpg);
                 width:100%;
                 height:100%;
                 background-size:cover;
                 background-repeat: no-repeat;
                 margin: -0.5%;
+                display: block;
+                /*display: none;*/
             }
             #btn{                  /*  按钮图片  */
                 position: absolute;
-                z-index: 99;
+                z-index: 998;
                 left: 80%;
                 top: 70%;
                 width:56px;
@@ -43,17 +71,23 @@
                 #Rotation {
                     display: block;
                 }
+            } 
+            .highslide1,.highslide2,.highslide3{
+                z-index: 80;
+                margin-top: 20%;
+                padding-top: 0;             /* 结束继承 */
             }       
+            .highslide1{
+                top:-25%;
+            }
+            .highslide2{
+                top:38%;
+            }
+            .highslide3{
+                top:4%;
+            }      
         </style>
 
-<!-- 导航条 -->
-    <link rel="stylesheet" href="navi/jquery.sidr.dark.css">
-    <!-- Your CSS -->
-    <link rel="stylesheet" href="navi/style.css">
-<!-- 导航条 -->        
-
-
-        <script type="text/javascript" src="navi/jquery-3.2.1.min.js"></script>
 
     </head>
     <body onload="play()">
@@ -61,32 +95,60 @@
 
 
 
-    <!-- <audio src="wave2.mp3" autoplay="autoplay" loop="loop"> -->
-    <audio id='media' src="wave2.mp3" autoplay="autoplay" loop="loop">           <!--仅解决微信上的问题-->
+        <a href="#" onclick="return hs.htmlExpand(this, { contentId: 'highslide-html' } )"
+            class="highslide1">
+        <img src="img/s2_btn1.png">
+        </a>
+        <a href="#" onclick="return hs.htmlExpand(this, { contentId: 'highslide-html2' } )"
+            class="highslide2">
+        <img src="img/s2_btn2.png">
+        </a>        
+        <a href="#" onclick="return hs.htmlExpand(this, { contentId: 'highslide-html3' } )"
+            class="highslide3">
+        <img src="img/s2_btn3.png">
+        </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <audio src="wave2.mp3" autoplay="autoplay" loop="loop"> -->
+<audio id='media' src="wave2.mp3" autoplay="autoplay" loop="loop"><!--仅解决微信上的问题-->
+
 <script type="text/javascript">
+
 document.addEventListener("WeixinJSBridgeReady", function () { 
       document.getElementById('media').play(); 
 }, false);</script>
 
-    Your browser does not support the audio element.
-    </audio>
+Your browser does not support the audio element.
+</audio>
 
-  <!-- 导航条 -->
-       <div id="sidr">
-      <ul>
-        <li class="active" ><a href="index.html">index</a></li>
-        <li><a href="default2.html">origin</a></li>
-        <li><a href="default3.html">skatepark(2d)</a></li>
-        <li><a href="equipment.html">equipment</a></li>
-        <li><a id="skatepark">3d skatepark</a></li>
-        <li><a id="close-menu-button" href="#">Close menu</a></li>
-      </ul>
+<!-- 导航条2 -->
+
+    <div id="sidr">
+    <ul>
+    <li class="active" ><a href="index.html">index</a></li>
+    <li><a href="default2.html">origin</a></li>
+    <li><a href="default3.html">skatepark(2d)</a></li>
+    <li><a href="equipment.html">equipment</a></li>
+    <li><a id="skatepark">3d skatepark</a></li>
+    <li><a id="close-menu-button" href="#">Close menu</a></li>
+    </ul>
     </div>
 <script type="text/javascript">
 
-    sk1();
-    sk2();
-
+sk1();
+sk2();
 
 function sk1(){
 var skpark =document.getElementById('skatepark');
@@ -121,11 +183,135 @@ skpark.addEventListener('touchstart', function(event){
     <div id="overlay"></div>
 
     <a id="simple-menu" class="menu-button1" href="#sidr">btn</a>
-<!-- 导航条 -->
+<!-- 导航条2 -->
+<div id="container" class="container">
+
+<audio id='media' src="wave.mp3" autoplay="autoplay" loop="loop">           <!--仅解决微信上的问题-->
+<script type="text/javascript">
+document.addEventListener("WeixinJSBridgeReady", function () { 
+      document.getElementById('media').play(); 
+}, false);</script>
+Your browser does not support the audio element.
+</audio>
+<!--  -->
+
+<div class="info">      
+    
+<div class="highslide-html-content1" id="highslide-html">
+    <div class="highslide-header">
+        <ul>
+            <li class="highslide-move">
+                <a href="#" onclick="return false">Move</a>
+            </li>
+            <li class="highslide-close">
+                <a href="#" onclick="return hs.close(this)">Close</a>
+            </li>
+        </ul>
+    </div>
+    <div class="highslide-body">
+        在二十世纪五十年代末的太平洋彼岸，善于发明创造的爱迪生的后裔们把古老神州人们的幻想或多或少地变成了现实。五十年代初美国西海岸是弄潮儿们大试身手的地方。他们使用普通木头和价格昂贵的轻木制成的冲浪板在风口浪尖上寻找乐趣。
+到五十年代中期，模压聚氨酯泡沫和玻璃纤维取代了木制冲浪板。这些新型冲浪板的机动性和耐用性使得冲浪运动在五十年代末大为流行。
+滑板运动是冲浪运动在陆地上的延伸。前者受地理和气候条件的限制，而后者则有更大的自由度。阳光明媚的南加州海滩社区的居民们很快制出了世界上第一块滑板。
+
+由于滑板从冲浪衍生的原因，七十年代初的滑板文化基本上是带有冲浪印记的文化。滑板爱好者和滑板公园的建设者们一开始建造了不少模拟冲浪的地形。后来，他们终于意识到，由于滑板比冲浪板的阻力小，重量轻，可以建立不同于冲浪而更适合滑板的地形以取得更大的速度、机动性和自我表现能力。
+    </div>
+    <div class="highslide-footer">
+        <div>
+            <span class="highslide-resize" title="Resize">
+                <span></span>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="highslide-html-content1" id="highslide-html2">
+    <div class="highslide-header">
+        <ul>
+            <li class="highslide-move">
+                <a href="#" onclick="return false">Move</a>
+            </li>
+            <li class="highslide-close">
+                <a href="#" onclick="return hs.close(this)">Close</a>
+            </li>
+        </ul>
+    </div>
+    <div class="highslide-body">
+
+由于滑板从冲浪衍生的原因，七十年代初的滑板文化基本上是带有冲浪印记的文化。滑板爱好者和滑板公园的建设者们一开始建造了不少模拟冲浪的地形。后来，他们终于意识到，由于滑板比冲浪板的阻力小，重量轻，可以建立不同于冲浪而更适合滑板的地形以取得更大的速度、机动性和自我表现能力。
+    </div>
+    <div class="highslide-footer">
+        <div>
+            <span class="highslide-resize" title="Resize">
+                <span></span>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="highslide-html-content1" id="highslide-html3">
+    <div class="highslide-header">
+        <ul>
+            <li class="highslide-move">
+                <a href="#" onclick="return false">Move</a>
+            </li>
+            <li class="highslide-close">
+                <a href="#" onclick="return hs.close(this)">Close</a>
+            </li>
+        </ul>
+    </div>
+    <div class="highslide-body">
+在二十世纪五十年代末的太平洋彼岸，善于发明创造的爱迪生的后裔们把古老神州人们的幻想或多或少地变成了现实。五十年代初美国西海岸是弄潮儿们大试身手的地方。他们使用普通木头和价格昂贵的轻木制成的冲浪板在风口浪尖上寻找乐趣。
+到五十年代中期，模压聚氨酯泡沫和玻璃纤维取代了木制冲浪板。这些新型冲浪板的机动性和耐用性使得冲浪运动在五十年代末大为流行。
+滑板运动是冲浪运动在陆地上的延伸。前者受地理和气候条件的限制，而后者则有更大的自由度。阳光明媚的南加州海滩社区的居民们很快制出了世界上第一块滑板。
+    </div>
+    <div class="highslide-footer">
+        <div>
+            <span class="highslide-resize" title="Resize">
+                <span></span>
+            </span>
+        </div>
+    </div>
+</div>
 
 
-        <div id="animbg"></div>
+
+
+<!-- 
+        <img id="img1" src="img/s2_btn1.png">
+        <img id="img2" src="img/s2_btn2.png">
+        <img id="img3" src="img/s2_btn3.png"> -->
+
+</div>  <!--info-->
+
+    <div class="two">
+            <ul id="scene2" class="scene2">
+            <!-- <li class="layer" data-depth="1.00"><img src=""></li>-->   <!--不许上下移动--> 
+            <li class="layer" data-depth="0.6"><img src="img/s2_bg.jpg"></li>
+            <li class="layer" data-depth="0.66"><img src="img/s2_land.png"></li>
+            <li class="layer" data-depth="0.66"><img src="img/s2_beach.png"></li>
+            <li class="layer" data-depth="0.5"><img src="img/s2_house.png"></li>
+            <li class="layer" data-depth="0.5"><img src="img/s2_Bwave.png"></li>
+            <li class="layer" data-depth="0.3"><img src="img/s2_Bwave2.png"></li>
+            <li class="layer" data-depth="0.1"><img src="img/s2_Mwave2.png"></li>
+            <li class="layer" data-depth="0.2"><img src="img/s2_Mwave.png"></li>
+            <li class="layer" data-depth="0.3"><img src="img/s2_Fwave.png"></li>
+            <li class="layer" data-depth="0.15"><img src="img/s2_flower.png"></li>
+            <li class="layer" data-depth="0.2"><img src="img/s2_board.png"></li>
+            <li class="layer" data-depth="0.23"><img src="img/s2_body.png"></li>
+            <li class="layer" data-depth="0.2"><img src="img/s2_lhandf.png"></li>
+            <li class="layer" data-depth="0.3"><img src="img/s2_head.png"></li>
+        </ul>
+        <!-- <button onclick="removeDiv()">change</button> -->
+        </div>
+    </div> <!--container-->
         <script type="text/javascript">
+        var scene2 = document.getElementById('scene2');
+        var parallax2 = new Parallax(scene2);
+    </script>
+</div>
+
+<div id="animbg"></div>
+<script type="text/javascript">
         (function(window){
             window.frameAnimation = {
                 anims:(function(){
@@ -154,33 +340,74 @@ skpark.addEventListener('touchstart', function(event){
 
                                     $("#btn").remove();
                                     $("body").append("<img src='img/next.png' id='btn' alt='' />");
-                                     w();
+                                     
+                                    w();
                                     r();
-                                function w(){
-                                var img1 =document.getElementById('btn');
-                                img1.addEventListener('mouseup', function(event){
-                                document.getElementById('btn').src="img/next.png";
-                                console.log('up');
 
-                                window.location.assign("default2.html");
-                                },false);
-                                img1.addEventListener('mousedown', function(event){
-                                document.getElementById('btn').src="img/next1.png";
-                                console.log('down');
-                                },false);};
+                                //隐藏动画
+                                    function w(){
+                                    var img1 =document.getElementById('btn');
+                                    img1.addEventListener('mouseup', function(event){
+                                    document.getElementById('btn').src="img/next.png";
+                                    console.log('up');
 
-                                function r(){
-                                var img1 =document.getElementById('btn');
-                                img1.addEventListener('touchend', function(event){
-                                document.getElementById('btn').src="img/next.png";
-                                console.log('up');
+                                    document.getElementById('animbg').style.display="none";
+                                    
+                                    $("#btn").remove();
+                                    s();
+                                    t();
+                                    },false);
+                                    img1.addEventListener('mousedown', function(event){
+                                    document.getElementById('btn').src="img/next1.png";
+                                    console.log('down');
+                                    },false);};
 
-                                window.location.assign("default2.html");
-                                },false);
-                                img1.addEventListener('touchstart', function(event){
-                                document.getElementById('btn').src="img/next1.png";
-                                console.log('down');
-                                },false);};
+                                    function r(){
+                                    var img1 =document.getElementById('btn');
+                                    img1.addEventListener('touchend', function(event){
+                                    document.getElementById('btn').src="img/next.png";
+                                    console.log('up');
+
+                                    document.getElementById('animbg').style.display="none";
+                                    $("#btn").remove();
+                                    s();
+                                    t();
+                                    },false);
+                                    img1.addEventListener('touchstart', function(event){
+                                    document.getElementById('btn').src="img/next1.png";
+                                    console.log('down');
+                                    },false);};
+
+                                //跳转
+                                    function s(){
+                                    var img1 =document.getElementById('btn');
+                                    img1.addEventListener('mouseup', function(event){
+                                    document.getElementById('btn').src="img/next.png";
+                                    console.log('up');
+
+                                    window.location.assign("frame.html");
+                                    },false);
+                                    img1.addEventListener('mousedown', function(event){
+                                    document.getElementById('btn').src="img/next1.png";
+                                    console.log('down');
+                                    },false);};
+
+                                    function t(){
+                                    var img1 =document.getElementById('btn');
+                                    img1.addEventListener('touchend', function(event){
+                                    document.getElementById('btn').src="img/next.png";
+                                    console.log('up');
+
+                                    window.location.assign("frame.html");
+                                    },false);
+                                    img1.addEventListener('touchstart', function(event){
+                                    document.getElementById('btn').src="img/next1.png";
+                                    console.log('down');
+                                    },false);};
+
+
+
+
 
                             }
                             if(0 == times || time <times){
@@ -241,18 +468,24 @@ skpark.addEventListener('touchstart', function(event){
         }
         // function skip(){
         //     window.location.assign("default2.html");
-        // }
+        // }    
         window.onresize = function(){
-        $("#animbg").remove();
-        $("body").append("<div id='animbg'></div>");
-        play();
-        }        
+        if(document.getElementById('animbg').style.display!="none"){
+            $("#animbg").remove();
+            $("body").append("<div id='animbg'></div>");
+            play();
+        }
+        else {
+            document.getElementById('animbg').style.display="none";
+        }
+ 
+        }                   //播放序列帧
         
-    </script>
+</script>
 
 
 
-<!-- 导航条 -->
+<!-- 导航条3 -->
     <script src="navi/jquery.sidr.js"></script>
 
     <!-- Your code -->
@@ -270,7 +503,7 @@ skpark.addEventListener('touchstart', function(event){
     });
 
     </script>
-<!-- 导航条 -->
+<!-- 导航条3 -->
         <!-- <script type="text/javascript"> 
         window.onresize = function(){
         console.log(1);
