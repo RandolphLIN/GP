@@ -396,10 +396,19 @@ skpark.addEventListener('touchstart', function(event){
                                 document.getElementById('btn').src="img/next.png";
                                 console.log('up');
 
-                                document.getElementById('animbg').style.display="none";
-                                $("body").append("<img src='img/s2_btn2.png' id='btnN' alt='' />");
+
+                                if (document.getElementById('animbg').style.display!="none"){
+                                    document.getElementById('animbg').style.display="none";
+                                }   
+                                else{
+                                $("body").append("<img src='img/s2_btn2.png' id='btnN' alt='' />");                                
                                 s();
                                 t();
+                                }
+
+                                
+
+
                                 },false);
                                 img1.addEventListener('touchstart', function(event){
                                 document.getElementById('btn').src="img/next1.png";
