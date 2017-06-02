@@ -438,6 +438,39 @@
 
 					scene.add( object );
 				});
+
+
+// //16 skateboard.jpg
+// 				var texture16 = new THREE.Texture();
+// 				var manager16 = new THREE.LoadingManager();
+
+// 				var loader16 = new THREE.ImageLoader( manager16 );
+// 				loader16.load( 'model/skb2.jpg', function ( image ) {
+
+// 					texture16.image = image;
+// 					texture16.needsUpdate = true;
+
+// 				});
+// 				var loader16 = new THREE.OBJLoader( manager16 );
+// 				loader16.load( 'model/skb2.obj', function ( object ) {
+
+// 					object.traverse( function ( child ) {
+
+// 						if ( child instanceof THREE.Mesh ) {
+
+// 							child.material.map = texture16;
+// 						}
+// 					} );
+// 					object.position.x = 0;
+// 					object.position.y = 0;
+// 					object.position.z = 0;
+
+// 					scene.add( object );
+// 				});
+
+
+
+
 // //16
 // 				var texture16 = new THREE.Texture();
 // 				var manager16 = new THREE.LoadingManager();

@@ -138,11 +138,10 @@ skpark.addEventListener('touchstart', function(event){
     var renderer, mixer;
     var mesh;
     var worldWidth = 128, worldDepth = 128,
-
-            worldHalfWidth = worldWidth / 2,worldHalfDepth = worldDepth / 2;
+        worldHalfWidth = worldWidth / 2,worldHalfDepth = worldDepth / 2;
     var clock = new THREE.Clock();
-                var windowHalfX = window.innerWidth / 2;
-            var windowHalfY = window.innerHeight / 2;
+    var windowHalfX = window.innerWidth / 2;
+    var windowHalfY = window.innerHeight / 2;
     var SCREEN_WIDTH = window.innerWidth;
     var SCREEN_HEIGHT = window.innerHeight;
     var container = document.getElementById( 'container' );
@@ -256,6 +255,7 @@ skpark.addEventListener('touchstart', function(event){
     renderer.setSize( window.innerWidth, window.innerHeight );
 
     controls.handleResize();
+    console.log("sss");
 
     }
     function onDocumentMouseMove( event ) {
