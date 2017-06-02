@@ -16,6 +16,7 @@
 }
 .highslide1,.highslide2,.highslide3{
 	width: 3%;
+	z-index: 1;
 }
 .highslide4,.highslide5,.highslide6{
 	width: 5%;
@@ -25,21 +26,21 @@
 	position: absolute;
 	outline: none;
 	text-decoration: none;
-	padding-top: 10%;
+	margin-top: 10%;
     left: 25%;
 }
 .highslide2 {
 	position: absolute;
 	outline: none;
 	text-decoration: none;
-	padding-top: 42%;
+	margin-top: 42%;
     left: 43%;
 }
 .highslide3 {
 	position: absolute;
 	outline: none;
 	text-decoration: none;
-	padding-top: 30%;
+	margin-top: 30%;
     left: 85%;
 }
 

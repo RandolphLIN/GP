@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">       
+	<!-- <meta charset="utf-8">        -->
 	<meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<title>equipment</title>
-
+<link rel="stylesheet" href="navi/style.css">
 <!-- 	<link href="../_assets/css/shared.css" rel="stylesheet" type="text/css"/>
 	<link href="../_assets/css/examples.css" rel="stylesheet" type="text/css"/> -->
 	<script src="js/examples.js"></script>
@@ -13,6 +13,9 @@
 	<script src="js/preloadjs-NEXT.min.js"></script>
 
 	<script src="js/easeljs-NEXT.combined.js"></script>
+	<!-- test -->
+	<script type="text/javascript" src="text/highslide-with-html.js"></script>
+	<link rel="stylesheet" type="text/css" href="text/highslide.css" />
 	<!-- We also provide hosted minified versions of all CreateJS libraries.
 	  http://code.createjs.com -->
 	  <style type="text/css">
@@ -29,7 +32,7 @@
 		  position: relative;
 /*		  max-width: 1920px;*/
 		  height:100%;
-		  margin: 0 auto;   /*å±…ä¸­*/
+		  margin: 0 auto;   /*¾ÓÖĞ*/
 		  overflow: hidden;
 		  
 		}
@@ -75,8 +78,230 @@
         	left: 200%;
         }
 
+		.highslide1 {
+			position: absolute;
+			outline: none;
+			text-decoration: none;
+			margin-top: 20%;
+   			left: 50%;
+		}
+		.highslide2 {
+			position: absolute;
+			outline: none;
+			text-decoration: none;
+			margin-top: 30%;
+		    left: 50%;
+		}
+		.highslide3 {
+			position: absolute;
+			outline: none;
+			text-decoration: none;
+			margin-top: 40%;
+		    left: 50%;
+		}
+		.intro{
+			z-index: 10;
+			position: absolute;
+			color: #FFFFFF ;
+		    width: 85%;
+		    left: 10%;
+		}
+p {
+    font-size: 138%;
+    margin-bottom: 20px;
+}
 
 	</style>
+
+
+
+<!-- µ¼º½Ìõ -->
+    <link rel="stylesheet" href="navi/jquery.sidr.dark.css">
+    <!-- Your CSS -->
+    <link rel="stylesheet" href="navi/style.css">
+<!-- µ¼º½Ìõ -->        
+
+        <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+
+</head>
+
+<body onload="init();">
+
+
+<div class="intro"><p>»¬°åÊÇÒ»ÏîÈ«ÉíĞÔµÄÔË¶¯¡£È«ÉíµÄ¸÷¸ö¡°Áã¼ş¡±¶¼Òª²ÎÓë½øÀ´¡£µ«ÊÇ·Ö¹¤²»Í¬¡£Í¨³£ÉÏÖ«Æğµ½ÁË±£³ÖÆ½ºâ£¬¼õËÙ¡¢»òË¤µ¹ºóµÄ±£»¤×÷ÓÃ¡£<br>Íæ»¬°åË¤µ¹µ¼ÖÂµÄ¹ÇÕÛ¡¢Èí×éÖ¯ËğÉËÒÔ¼°Æ¤·ô²ÁÉËµÈµÈ£¬¶¼ÊÇ³£¼ûµÄ¡£Òò´ËÅå´÷»¬°å»¤¾ßÊÇ·Ç³£±ØÒª¡£<br>»¬°å»¤¾ß°üÀ¨Í·¿ø¡¢»¤Ï¥¡¢»¤Íó£¨»¤Öâ£©µÈ£¬½¨Òé³õÑ§Õß»òÕß×öÄÑ¶È¶¯×÷µÄ°åÓÑ¶¼ÒªÅå´ø¡£<br>
+click animation see what happen:)</p></div>
+	
+        <a href="#" onclick="return hs.htmlExpand(this, { contentId: 'highslide-html' } )" 
+            class="highslide1">
+        <img src="img/s3_btn3.png">
+        </a>
+        <a href="#" onclick="return hs.htmlExpand(this, { contentId: 'highslide-html2' } )"
+            class="highslide2">
+        <img src="img/s3_btn3.png">
+        </a>
+        <a href="#" onclick="return hs.htmlExpand(this, { contentId: 'highslide-html3' } )"
+            class="highslide3">
+        <img src="img/s3_btn3.png">
+        </a>
+
+<div class="highslide-html-content1" id="highslide-html">
+    <div class="highslide-header">
+        <ul>
+            <li class="highslide-move">
+                <a href="#" onclick="helmet();">animation</a>
+            </li>
+            <li class="highslide-close">
+                <a href="#" onclick="return hs.close(this)">Close</a>
+            </li>
+        </ul>
+    </div>
+    <div class="highslide-body">
+Ò»¸öÖÊÁ¿¹ıÓ²µÄÍ·¿øÊÇÄú×îÖØÒªµÄ°²È«×°ÖÃ£¬Èç¹ûÄúÍæ»¬°åÊ±Ã»ÓĞ´÷Í·¿ø£¬¹ÎÉËÅ¤ÉË¿ÉÒÔºÜ¿ì»Ö¸´£¬µ«Í·²¿µÄËğÉË½«¼«´óµÄÓ°ÏìÄúÒÔºóµÄÉú»î¡£
+    </div>
+    <div class="highslide-footer">
+        <div>
+            <span class="highslide-resize" title="Resize">
+                <span></span>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="highslide-html-content1" id="highslide-html2">
+    <div class="highslide-header">
+        <ul>
+            <li class="highslide-move">
+                <a href="#" onclick="cuff()">animation</a>
+            </li>
+            <li class="highslide-close">
+                <a href="#" onclick="return hs.close(this)">Close</a>
+            </li>
+        </ul>
+    </div>
+    <div class="highslide-body">
+
+»¤ÖâºÍ»¤Ï¥Ò»Ñù£¬ÓĞËÜÁÏÃ±éÜµÄ»¤ÖâÊÇ×îºÃµÄ»¤Öâ£¬Í¬Ê±ÓĞºÜ¶àÌæ´úÆ·µÄ¹¦ÄÜÒ²ÊÇÒ»ÑùµÄ¡£
+»¤Ï¥¶ÔÓÚ»¤Ï¥À´Ëµ×îÓĞÒâÒåµÄ·¢Ã÷±ãÊÇËÜÁÏ»¤Ï¥µÄ·¢Ã÷¡£ÔÚÑ¡Ôñ´ø»¤¾ßÊ±Òª´÷Ó²ÖÊ»¤¾ß£¬µ¯ĞÔµÄÈíÖÊ»¤¾ß×÷ÓÃÉõÎ¢£¬ÔË¶¯Ê±¸ù±¾Æğ²»µ½×ã¹»µÄ·À»¤Ğ§¹û£¬Åå´øÈÎºÎÒ»¿î»¤Ï¥¶¼±ÈÃ»ÓĞÅå´ø»¤Ï¥ÒªºÃ¡£
+    </div>
+    <div class="highslide-footer">
+        <div>
+            <span class="highslide-resize" title="Resize">
+                <span></span>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="highslide-html-content1" id="highslide-html3">
+    <div class="highslide-header">
+        <ul>
+            <li class="highslide-move">
+                <a href="#" onclick="butt();">animation</a>
+            </li>
+            <li class="highslide-close">
+                <a href="#" onclick="return hs.close(this)">Close</a>
+            </li>
+        </ul>
+    </div>
+    <div class="highslide-body">
+»¤ÍÎ°üº¬×Å¶à¸ö²¿Î»µÄ·À»¤µæ£¬ÍÎ²¿´ó»¤µæ×¢ÖØ¶ÔÍÎ²¿µÄ±£»¤ĞÔºÍ°ü¹üĞÔ£¬´óÃæ»ı¼õÕğµæÅäºÏ´óÍÈ»¤µæÊµÏÖÈ«·½Î»·À»¤¡£
+×óÓÒ¿è»¤µæ×÷ÎªÁ½²àµÄ¼õÕğµæÅäºÏ×óÓÒÑü»¤µæ¶Ô¿è¹ÇÓĞ·À»¤×÷ÓÃ¡£»¤ÍÎÖĞ²¿µÄÑü×µ»¤µæ¼õÇáÎ²×µÔÚ»¬°åÔË¶¯ÖĞÊÕµ½µÄÕğÉË¡£
+
+    </div>
+    <div class="highslide-footer">
+        <div>
+            <span class="highslide-resize" title="Resize">
+                <span></span>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div id="Rotation"></div>
+
+<div class="canvas1">
+
+
+<!-- µ¼º½Ìõ -->
+       <div id="sidr">
+      <ul>
+        <li class="active" ><a href="index.html">index</a></li>
+        <li><a href="default2.html">origin</a></li>
+        <li><a href="default3.html">skatepark(2d)</a></li>
+        <li><a href="equipment.html">equipment</a></li>
+        <li><a id="skatepark">3d skatepark</a></li>
+        <li><a id="close-menu-button" href="#">Close menu</a></li>
+      </ul>
+    </div>
+
+<script type="text/javascript">
+
+sk1();
+sk2();
+
+function sk1(){
+var skpark =document.getElementById('skatepark');
+skpark.addEventListener('mouseup', function(event){
+
+if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+    window.location.href = "animation.html";
+} else {
+    window.location.href = "index02.html";
+}
+
+},false);
+skpark.addEventListener('mousedown', function(event){
+
+},false);};
+
+function sk2(){
+var skpark =document.getElementById('skatepark');
+skpark.addEventListener('touchend', function(event){
+
+if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+    window.location.href = "animation.html";
+} else {
+    window.location.href = "index02.html";
+}
+},false);
+skpark.addEventListener('touchstart', function(event){
+
+},false);};
+</script>
+
+
+<div id="overlay"></div>
+
+<a id="simple-menu" class="menu-button1" style="top: 13%" href="#sidr">Toggle menu</a>
+<!-- µ¼º½Ìõ -->
+
+	<canvas id="testCanvas" width="960" height="420"></canvas>
+</div>
+
+<!-- µ¼º½Ìõ -->
+    <script src="navi/jquery.sidr.js"></script>
+
+    <!-- Your code -->
+    <script>
+
+    $(document).ready(function() {
+      $('#simple-menu').sidr({
+        displace: false
+      });
+    });
+
+    $('#overlay, #close-menu-button').click(function () {
+      $.sidr('close', 'sidr');
+    });
+
+    </script>
+
+<!-- <div id="btns">
+    <button z-index="99999" onclick="helmet()" value="1">helmet</button><br>
+	<button z-index="99999" onclick="cuff()" value="2">kneecap and cuff</button><br>
+	<button z-index="99999" onclick="butt()" value="3">Gear-Wrist Guard</button><br>
+</div> -->
+
 
 <script id="editable">
 	var stage, w, h, loader;
@@ -89,7 +314,6 @@
 		// grab canvas width and height for later calculations:
 		w = stage.canvas.width;
 		h = stage.canvas.height;
-
 
 		console.log(w);
 		manifest = [
@@ -154,9 +378,9 @@
 				// define two animations, run (loops, 1.5x speed) and jump (returns to run):
 				"animations": {
 					"breath": [0, 20, "breath", 0.7],
-					"cuff": [20, 40, "breath"],
-					"helmet": [40, 90, "breath"],
-					"bottom": [90, 155, "breath"],					
+					"cuff": [20, 40, "breath", 0.7],
+					"helmet": [40, 90, "breath", 0.7],
+					"bottom": [90, 155, "breath", 0.7],					
 				}
 			});
 
@@ -196,7 +420,7 @@
 		grant2.y = 230;
 
 
-		stage.addChild(sky, hill, hill2, ground, light2 ,light3 ,grant, grant2, light, light0, gear );				//å†³å®šå±‚æ¬¡
+		stage.addChild(sky, hill, hill2, ground, light2 ,light3 ,grant, grant2, light, light0, gear );				//¾ö¶¨²ã´Î
 		stage.addEventListener("stagemousedown", handleJumpStart);
 
 		createjs.Ticker.timingMode = createjs.Ticker.RAF;
@@ -237,11 +461,11 @@
 		if (hill2.x + hill2.image.width * hill2.scaleX <= 0) {
 			hill2.x = w;
 		}
-		light.x = (light.x - deltaS * 114);										//å¤§ç¯
+		light.x = (light.x - deltaS * 114);										//´óµÆ
 		if (light.x + light.image.width * light.scaleX <= 0) {
 			light.x = w;
 		}
-		light0.x = (light0.x - deltaS * 114);										//å¤§ç¯
+		light0.x = (light0.x - deltaS * 114);									//´óµÆ
 		if (light0.x + light0.image.width * light0.scaleX <= 0) {
 			light0.x = w;
 		}
@@ -258,109 +482,6 @@
 	}
 </script>
 
-<!-- å¯¼èˆªæ¡ -->
-    <link rel="stylesheet" href="navi/jquery.sidr.dark.css">
-    <!-- Your CSS -->
-    <link rel="stylesheet" href="navi/style.css">
-<!-- å¯¼èˆªæ¡ -->        
 
-        <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
-
-</head>
-
-<body onload="init();">
-	
-
-
-<div id="Rotation"></div>
-
-<div class="canvas1">
-
-
-<!-- å¯¼èˆªæ¡ -->
-       <div id="sidr">
-      <ul>
-        <li class="active" ><a href="index.html">index</a></li>
-        <li><a href="default2.html">origin</a></li>
-        <li><a href="default3.html">skatepark(2d)</a></li>
-        <li><a href="equipment.html">equipment</a></li>
-        <li><a id="skatepark">3d skatepark</a></li>
-        <li><a id="close-menu-button" href="#">Close menu</a></li>
-      </ul>
-    </div>
-
-<script type="text/javascript">
-
-sk1();
-sk2();
-
-function sk1(){
-var skpark =document.getElementById('skatepark');
-skpark.addEventListener('mouseup', function(event){
-
-if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
-    window.location.href = "animation.html";
-} else {
-    window.location.href = "index02.html";
-}
-
-},false);
-skpark.addEventListener('mousedown', function(event){
-
-},false);};
-
-function sk2(){
-var skpark =document.getElementById('skatepark');
-skpark.addEventListener('touchend', function(event){
-
-if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
-    window.location.href = "animation.html";
-} else {
-    window.location.href = "index02.html";
-}
-},false);
-skpark.addEventListener('touchstart', function(event){
-
-},false);};
-</script>
-
-
-
-
-
-
-    <div id="overlay"></div>
-
-    <a id="simple-menu" class="menu-button1" style="top: 13%" href="#sidr">Toggle menu</a>
-<!-- å¯¼èˆªæ¡ -->
-
-
-
-
-	<canvas id="testCanvas" width="960" height="420"></canvas>
-</div>
-
-<!-- å¯¼èˆªæ¡ -->
-    <script src="navi/jquery.sidr.js"></script>
-
-    <!-- Your code -->
-    <script>
-
-    $(document).ready(function() {
-      $('#simple-menu').sidr({
-        displace: false
-      });
-    });
-
-    $('#overlay, #close-menu-button').click(function () {
-      $.sidr('close', 'sidr');
-    });
-
-    </script>
-<div id="btns">
-    <button z-index="99999" onclick="helmet()" value="1">helmet</button><br>
-	<button z-index="99999" onclick="cuff()" value="2">kneecap and cuff</button><br>
-	<button z-index="99999" onclick="butt()" value="3">Gear-Wrist Guard</button><br>
-</div>
 </body>
 </html>
