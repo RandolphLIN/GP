@@ -135,6 +135,22 @@ p {
    			font-family: Verdana, Helvetica;
     		font-size: 10pt;
 		}
+
+		#LoadingBar {
+    z-index: 999999;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+}
+#LoadingBar2 {
+    position: absolute;
+    top: 45%;
+    left: 40%;
+    width: 20%;
+    height: 10%;
+}
 	</style>
 
 
@@ -149,7 +165,9 @@ p {
 
 </head>
 
-<body onload="init();">
+
+<body>  
+<div id="LoadingBar"><div id="LoadingBar2"><img style="width: 100%" src="img/load.png"></div></div>
         <a href="#" onclick="return hs.htmlExpand(this, { contentId: 'highslide-html' } )" 
             class="highslide1">
         <img id="img1" src="img/s3_btn3.png">
@@ -511,6 +529,21 @@ skpark.addEventListener('touchstart', function(event){
 	}
 </script>
 
+    <script type="text/javascript">
+        function initPage(){
+            var objLoading = document.getElementById("LoadingBar");
+            if(objLoading!=null){
+                objLoading.style.display = "none";
+            }
+        }   
+    </script>
+    <script type="text/javascript">
+        
+    window.onload=function(){
+        init();
+        initPage();
+    }
+    </script>
 
 </body>
 </html>

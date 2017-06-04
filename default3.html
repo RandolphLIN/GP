@@ -112,7 +112,8 @@
 </script>
 
 </head>
-<body onload="play()">
+<body>
+<div id="LoadingBar"><div id="LoadingBar2"><img src="img/load.png"></div></div>
 <div id="Rotation"></div>
 
         <a href="#" onclick="return hs.htmlExpand(this, { contentId: 'highslide-html' } )"
@@ -602,5 +603,23 @@ document.getElementById('btn2').src="img/s3_btn1.png";
         console.log(1);
         }        
         </script> -->
+
+
+
+            <script type="text/javascript">
+        function initPage(){
+            var objLoading = document.getElementById("LoadingBar");
+            if(objLoading!=null){
+                objLoading.style.display = "none";
+            }
+        }   
+    </script>
+    <script type="text/javascript">
+        
+    window.onload=function(){
+        play();
+        initPage();
+    }
+    </script>
     </body>
 </html>

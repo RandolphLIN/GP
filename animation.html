@@ -94,6 +94,23 @@
         margin-top: 10%;
         left: 85%;
         }
+        #LoadingBar {
+    z-index: 999999;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color:#000000;
+}
+
+#LoadingBar2 {
+    position: absolute;
+    top: 45%;
+    left: 40%;
+    width: 20%;
+    height: 10%;
+}
+
     </style>
 <!-- 导航条 -->
     <link rel="stylesheet" href="navi/jquery.sidr.dark.css">
@@ -106,9 +123,10 @@
 </head>
 <body>
 
+    <div id="LoadingBar"><div id="LoadingBar2"><img src="img/load.png"></div></div>
 <!--视频-->
 <a href="#" onclick="return hs.htmlExpand(this, { contentId: 'highslide-html2' } )" class="highslide2">
-<img src="img/s3_btn2.png">
+<img src="img/s2_btn1.png">
 </a>
 
 <div class="highslide-html-content1" id="highslide-html2">
@@ -148,10 +166,10 @@
       </ul>
     </div>
 <script type="text/javascript">
-window.onload=function(){
-    sk1();
-    sk2();
-};
+
+sk1();
+sk2();
+
 
 function sk1(){
 var skpark =document.getElementById('skatepark');
@@ -365,3 +383,15 @@ skpark.addEventListener('touchstart', function(event){
     }
 
 </script>
+    <script type="text/javascript">
+        function initPage(){
+            var objLoading = document.getElementById("LoadingBar");
+            if(objLoading!=null){
+                objLoading.style.display = "none";
+            }
+        }   
+    </script>
+    <script type="text/javascript">
+        
+    window.onload=initPage();
+    </script>

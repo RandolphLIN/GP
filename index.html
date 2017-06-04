@@ -46,6 +46,8 @@
 
 </head>
 <body style="background-color: #FFFFFF;overflow: hidden;">
+
+    <div id="LoadingBar"><div id="LoadingBar2"><img src="img/load.png"></div></div>
     <div id="Rotation"></div>
  <!-- 导航条 -->
        <div id="sidr">
@@ -188,6 +190,19 @@ document.getElementById('start').src="img/s2_btn2.png";
       $.sidr('close', 'sidr');
     });
 
+    </script>
+
+    <script type="text/javascript">
+        function initPage(){
+            var objLoading = document.getElementById("LoadingBar");
+            if(objLoading!=null){
+                objLoading.style.display = "none";
+            }
+        }   
+    </script>
+    <script type="text/javascript">
+        
+    window.onload=initPage();
     </script>
 </body>
 </html>
