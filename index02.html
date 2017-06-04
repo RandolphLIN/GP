@@ -54,6 +54,13 @@
                 display: block;
             }
         }
+        #aimpoint{
+    		width: 7%;
+    		height: 12%;
+    		left: 45%;
+    		position: absolute;
+    		top: 45%;
+        }
 
 		</style>
 <!-- 导航条 -->
@@ -68,6 +75,7 @@
 
 	</head>
 	<body>
+	<div id="aimpoint"><img src="img/aimpoint.png"></div>
 	<div id="Rotation"></div>
   <!-- 导航条 -->
        <div id="sidr">
@@ -125,7 +133,11 @@ skpark.addEventListener('touchstart', function(event){
 
 
 		<div id="container"><br /><br /><br /><br /><br />生成中...</div>
-		<div id="info">skatepark<br />WSAD控制<a href="index.html">返回</a><a href="javascript:save()">save .png</a></div>
+		<div id="info" style="color: #000000"><span style="color: #F86767">create your skatepark here</span><br />WSAD配合鼠标控制视角<br>
+		鼠标置于屏幕中心可停止镜头摆动。<br>
+		点击网格区域可生成方块：)<a href="index.html">返回</a>
+		<!-- <a href="javascript:save()">save .png</a> -->
+		</div>
 
 
 		<script src="js/three.js"></script>
