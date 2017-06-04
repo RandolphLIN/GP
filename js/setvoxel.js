@@ -43,7 +43,7 @@
 				// cubes
 
 				cubeGeo = new THREE.BoxGeometry( 2, 2, 2 );					//实际方块
-				cubeMaterial = new THREE.MeshLambertMaterial( { color: 0xfeb74c, map: new THREE.TextureLoader().load( "textures/square-outline-textured.png" ) } );
+				cubeMaterial = new THREE.MeshLambertMaterial( { color: 0xfeb74c, map: new THREE.TextureLoader().load( "textures/square-outline-textured2.png" ) } );
 
 				// grid
 
