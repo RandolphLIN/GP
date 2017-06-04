@@ -10,8 +10,47 @@
     <script src="js/FirstPersonControls.js"></script>
     <script src="js/OrbitControls.js"></script>
     
-        <script src="js/model.js"></script>
-        <script src="js/setvoxel.js"></script>
+    <script src="js/model.js"></script>
+    <script src="js/setvoxel.js"></script>
+    
+<!--     <script type="text/javascript">
+    //16 skateboard.jpg
+    var texture16 = new THREE.Texture();
+    var manager16 = new THREE.LoadingManager();
+
+    var loader16 = new THREE.ImageLoader( manager16 );
+    loader16.load( 'model/skb2.jpg', function ( image ) {
+
+        texture16.image = image;
+        texture16.needsUpdate = true;
+
+    });
+    var loader16 = new THREE.OBJLoader( manager16 );
+    loader16.load( 'model/skb2.obj', function ( object ) {
+
+        object.traverse( function ( child ) {
+
+            if ( child instanceof THREE.Mesh ) {
+
+                child.material.map = texture16;
+            }
+        } );
+        object.position.x = 0;
+        object.position.y = 0;
+        object.position.z = 0;
+
+        scene.add( object );
+    });
+    </script> -->
+
+
+
+    <link rel="stylesheet" type="text/css" href="text/default.css"/>
+
+    <!-- test -->
+    <script type="text/javascript" src="text/highslide-with-html.js"></script>
+    <link rel="stylesheet" type="text/css" href="text/highslide.css" />
+
     <style>
         body {
             background:#777;
@@ -40,6 +79,21 @@
                 display: block;
             }
         }
+        #mcvideo{
+            position:absolute;
+            top: 10%;
+            left: 85%;
+            width: 10%;
+            height: 15%;
+            background-color: #EA2525;
+        }
+        .highslide2 {
+        position: absolute;
+        outline: none;
+        text-decoration: none;
+        margin-top: 10%;
+        left: 85%;
+        }
     </style>
 <!-- 导航条 -->
     <link rel="stylesheet" href="navi/jquery.sidr.dark.css">
@@ -47,11 +101,40 @@
     <link rel="stylesheet" href="navi/style.css">
 <!-- 导航条 -->        
 
-
     <script type="text/javascript" src="navi/jquery-3.2.1.min.js"></script>
 
 </head>
 <body>
+
+<!--视频-->
+<a href="#" onclick="return hs.htmlExpand(this, { contentId: 'highslide-html2' } )" class="highslide2">
+<img src="img/s3_btn2.png">
+</a>
+
+<div class="highslide-html-content1" id="highslide-html2">
+    <div class="highslide-header">
+        <ul>
+            <li class="highslide-move">
+                <a href="#" onclick="return false">Move</a>
+            </li>
+            <li class="highslide-close">
+                <a href="#" onclick="return hs.close(this)">Close</a>
+            </li>
+        </ul>
+    </div>
+    <div class="highslide-body">
+<center><video src="video/skatepark.mp4" controls="true" width="85%"></video></center>
+
+    </div>
+    <div class="highslide-footer">
+        <div>
+            <span class="highslide-resize" title="Resize">
+                <span></span>
+            </span>
+        </div>
+    </div>
+</div>
+
 <div id="Rotation"></div>
   <!-- 导航条 -->
        <div id="sidr">
@@ -105,10 +188,7 @@ skpark.addEventListener('touchstart', function(event){
     <a id="simple-menu" class="menu-button1" href="#sidr">btn</a>
 <!-- 导航条 -->
 
-
 <div id="container"></div>
-
-
 
 <!-- 导航条 -->
     <script src="navi/jquery.sidr.js"></script>
@@ -146,9 +226,6 @@ skpark.addEventListener('touchstart', function(event){
     var SCREEN_HEIGHT = window.innerHeight;
     var container = document.getElementById( 'container' );
 
-
-
-
     renderer = new THREE.WebGLRenderer( { antialias: true } );
     renderer.setClearColor( 0xffffff );
     renderer.setPixelRatio( window.devicePixelRatio );
@@ -164,7 +241,7 @@ skpark.addEventListener('touchstart', function(event){
         renderer.setSize( window.innerWidth, window.innerHeight );
     };
 
-    var url="model/skatepark  test.js";
+    var url="model/lord.js";
     var animation;
 
     if ( camera === undefined ) {

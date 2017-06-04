@@ -26,12 +26,13 @@
             height: 100%;
         }
             #animbg{
-                background-image: url(guochang2.jpg);
+                background-image: url(S2.jpg);
                 width:100%;
                 height:100%;
                 background-size:cover;
                 background-repeat: no-repeat;
-                margin: -0.5%;
+                /*margin: -0.5%;*/
+                margin-top: 0%;
                 z-index: 980;
                 position: absolute;
                 top: 0;
@@ -39,8 +40,8 @@
             #btn{                   /*  按钮图片  */
                 position: absolute;
                 z-index: 980;
-                left: 80%;
-                top: 70%;
+                left: 85%;
+                top: 5%;
                 width:56px;
                 height:56px;
 
@@ -48,16 +49,16 @@
             #btnN{                   /*  按钮图片  */
                 position: absolute;
                 z-index: 990;
-                left: 80%;
-                top: 70%;
+                left: 85%;
+                top: 5%;
                 width:56px;
                 height:56px;
             }
             #btn2{
-            width: 5%;
+            width: 3%;
             position: absolute;
-            margin-top:16%;
-            left:21%;
+            margin-top:15%;
+            left:60%;
             }
 
             #btn3{
@@ -91,16 +92,16 @@
             padding-top: 0;             /* 结束继承 */
         }
         .highslide1{
-                margin-top:24%;
-                left: 33%;
+                margin-top:30%;
+                left: 40%;
         }
         .highslide2{
-                margin-top:28%;
+                margin-top:30%;
                 left: 80%;
         }
         .highslide3{
-                margin-top:35%;
-                left: 7%;
+                margin-top:15%;
+                left: 20%;
         }
 
         </style>
@@ -116,15 +117,15 @@
 
         <a href="#" onclick="return hs.htmlExpand(this, { contentId: 'highslide-html' } )"
             class="highslide1">
-        <img src="img/s3_btn3.png">
+        <img src="img/s2_btn1.png">
         </a>
         <a href="#" onclick="return hs.htmlExpand(this, { contentId: 'highslide-html2' } )"
             class="highslide2">
-        <img src="img/s3_btn2.png">
+        <img src="img/s2_btn1.png">
         </a>        
         <a href="#" onclick="return hs.htmlExpand(this, { contentId: 'highslide-html3' } )"
             class="highslide3">
-        <img src="img/s2_btn3.png">
+        <img src="img/s2_btn1.png">
         </a>
 
 
@@ -133,7 +134,7 @@
 function s(){
 var img1 =document.getElementById('btnN');
 img1.addEventListener('mouseup', function(event){
-document.getElementById('btnN').src="img/next.png";
+document.getElementById('btnN').src="img/s2_btn2.png";
 console.log('up');
 if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
     window.location.href = "animation.html";
@@ -144,14 +145,14 @@ if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
 // window.location.assign("default3.html");
 },false);
 img1.addEventListener('mousedown', function(event){
-document.getElementById('btnN').src="img/next1.png";
+document.getElementById('btnN').src="img/s2_btn2_2.png";
 console.log('down');
 },false);};
 
 function t(){
 var img1 =document.getElementById('btnN');
 img1.addEventListener('touchend', function(event){
-document.getElementById('btnN').src="img/next.png";
+document.getElementById('btnN').src="img/s2_btn2.png";
 console.log('up');
 if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
     window.location.href = "animation.html";
@@ -162,7 +163,7 @@ if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
 // window.location.assign("default3.html");
 },false);
 img1.addEventListener('touchstart', function(event){
-document.getElementById('btnN').src="img/next1.png";
+document.getElementById('btnN').src="img/s2_btn2_2.png";
 console.log('down');
 },false);};
 </script>
@@ -252,7 +253,76 @@ skpark.addEventListener('touchstart', function(event){
         </ul>
     </div>
     <div class="highslide-body">
-1
+
+
+<div style="float: left;width: 50%;height: 30%;overflow: hidden;" >
+<img src="img/s3_info1.jpg"><img src="img/s3_info1.jpg"><img src="img/s3_info1.jpg"></div>
+<div style="float: left;width: 50%;height: 40%;overflow: hidden;">
+滑板项目（SKATBOARDING）可谓是极限运动的鼻祖，许多的极限运动项目均由滑板项目延伸而来。 50年代末60年代初由冲浪演变而成的滑板运动，而今在全球都极受欢迎。
+</div>
+
+<img src="img/s3_info2.jpg"><br><br>
+九十年代,由于正处于滑板换代的时期，滑板从一头改为两头，滑板板面变得很窄，轮子变得很小，因而出现了许多前一代滑板不可能完成的动作。这个时期是滑板运动的技巧性动作（technical tricks)时代。滑手们发明了很多新的动作。<br><br>
+<img src="img/s3_info3.jpg">
+滑板的技巧主要包括：THE AERIAL（在滑杆上）、THE INVERT（在U台上）、THE OLLIE（带板起跳），这些技术可说是除了翻板之外最重要的滑板动作。<br><br>
+
+<div style="width: 100%;height: 60%;overflow-x: hidden;overflow-y:scroll;">
+regular习惯为左脚在前的滑板姿势<br>
+goofy习惯为右脚在前的滑板姿势<br>
+fakie倒滑的姿势<br>
+swtich使用不习惯的站立姿势做动作<br>
+ollie豚跃，滑板中最基本的动作，就是普通人俗称的跳了；正常的滑行姿势，后脚发力起跳<br>
+nollie正常滑板姿势，起跳使用钱叫发力的豚跃姿势<br>
+manul只用两个后轮滑行的动作<br>
+nosemanul只用两个前轮滑行的动作<br><br>
+ 
+frontside 180可以简单用fs表示 带板跳外转180度<br>
+backside 180可以简单用bs表示 带板跳内转180度<br>
+kickflip可以简单用kf表示 前脚向身体外侧踢板，使板自转<br>
+heelflip可以简单用hf表示 前脚向身体内侧踢板，使板自转<br>
+frontside flip带板外跳转180度，同时做kickflip动作<br>
+backside flip带板内跳转180度，同时做kickflip动作<br>
+frontside heelflip带板外跳转180度，同时做heelflip动作<br>
+backside heelflip带板内跳转180度，同时做heelflip动作<br>
+360flip向身体内侧平转板360度，同时做kickflip的翻转动作<br><br>
+
+popshoveit板向身体内侧方向平转180度，人不转<br>
+front popshoveit板向身体外侧方向平转180度，人不转<br> 
+5050面对障碍物，做滑双桥的动作<br>
+backside 5050背对障碍物，做滑双桥的动作<br>
+5-0面对障碍物，做滑后桥，板与障碍物平行或面向前板向外45度左右<br>
+backside 5-0背对障碍物，做滑后桥，板与障碍物平行或背向前板向内45度左右<br>
+noseslide背对障碍物，外跳转90度做滑板头的动作<br>
+frontslide noseslide面对障碍物，内跳转90度做滑板头的动作<br>
+tailslide面对障碍物，外跳转90度，滑板尾<br>
+backslide tailslide背对障碍物，内跳转90度，滑板尾<br>
+nosegrind面对障碍物，滑前桥，板与障碍物平行<br>
+backside nosegrind背对障碍物，滑前桥，板与障碍物平行<br>
+crooked grind可以简单用k-grind表示 背对障碍物，同时滑前桥和板头，面向前，板与障碍物成45度左右<br>
+front side crooked grind面对障碍物，同时滑前桥和板头，背向前，板与障碍物成45度左右boardslide背对障碍物，外跳转90度，滑板底<br>
+frontside boardslide面对障碍物，内跳转90度，滑板底<br>
+smith面对障碍物外跳转45度，滑后桥和板底，面向前板向外45度<br>
+backside smith背对障碍物内跳转45度，滑后桥和板底，背向后板向内45度<br>
+feeble面对障碍物内跳转45度，滑后桥和板底，背向后板向内45度<br>
+backslide feeble背对障碍物外跳转45度，滑后桥和板底，面向前板向外45度<br>
+salar面对障碍物，内跳转45度，背向后滑后桥，板与障碍物向内成45度 <br>
+backside salar背对障碍物，外跳转45度，面向前滑后桥，板与障碍物向外成45度<br>
+nose blunt面对障碍物，外跳转90度，滑板头跟前轮，板与障碍物成90度<br>
+backside nose blunt背对障碍物，内跳转90度，滑板头跟前轮，板与障碍物成90度<br>
+tail blunt背对障碍物，外跳转90度，滑板尾跟后轮，板与障碍物成90度<br>
+frontslide tail blunt面对障碍物，内跳转90度，滑板尾跟后轮，板与障碍物成90度<br>
+lipslide面对障碍物，外转90度，面向前，滑板底<br>
+backside lipslide背对障碍物，内转90度，背向前，滑板底<br>
+over crooked面对障碍，外转45度，滑板头和前桥，面向前，板与障碍物成45度<br>
+backside over crooked背对障碍，内转45度，滑板头和前桥，背向前，板与障碍物成45度<br>
+halfcab以fakie方式倒滑，内跳转180度hardflip半竖转180度，自身翻转180度<br>
+bigspin板转360度，人转180度<br>
+valid heelflip板向身体外侧横转180度，同时做heelflip的动作<br>
+invalid heelflip板向身体内侧横转180度，同时做heelflip的动作<br>
+</div><br>
+<img src="img/s3_info4.jpg"><br>
+世界上两个重要的滑板国际组织：国际滑板商协会（INTERNATIONAL ASSOCIATION OF SKATEBOARD COMPANIES，IASC）及世界杯滑板赛（WORLD CUP SKATEBOARDING，WCS）。 
+
     </div>
     <div class="highslide-footer">
         <div>
@@ -276,7 +346,7 @@ skpark.addEventListener('touchstart', function(event){
     </div>
     <div class="highslide-body">
 
-2
+<center><video src="video/build.mp4" controls="true" width="85%"></video></center>
     </div>
     <div class="highslide-footer">
         <div>
@@ -299,7 +369,8 @@ skpark.addEventListener('touchstart', function(event){
         </ul>
     </div>
     <div class="highslide-body">
-3
+多样的滑板地形
+<img src="img/s3_s1.jpg">
     </div>
     <div class="highslide-footer">
         <div>
@@ -313,19 +384,18 @@ skpark.addEventListener('touchstart', function(event){
 
 </div>  <!--info-->
     <div class="three">
-            <ul id="scene3" class="scene3">
+        <ul id="scene3" class="scene3">
             <!-- <li class="layer" data-depth="1.00"><img src=""></li>-->   <!--不许上下移动--> 
             <li class="layer" data-depth="0.6"><img class="img4" src="img\scene3\layout2.jpg"></li>
                 <li class="layer" data-depth="0.3"><img class="img4" src="img\scene3\s3_ground.png"></li>
                 <li class="layer" data-depth="0.3"><img class="img4" src="img\scene3\s3_bowl.png"></li>
-                <li class="layer" data-depth="0.3"><img class="img4" src="img\scene3\skater2.png"></li>
                 <li class="layer" data-depth="0.4"><img class="img4" src="img\scene3\s3_b2.png"></li>
+                <li class="layer" data-depth="0.45"><img class="img4" src="img\scene3\s3_b.png"></li>
                 <li class="layer" data-depth="0.4"><img class="img4" src="img\scene3\s3_AB.png"></li>
                 <li class="layer" data-depth="0.4"><img class="img4" src="img\scene3\s3_FB.png"></li>
-                <li class="layer" data-depth="0.45"><img class="img4" src="img\scene3\s3_b.png"></li>
                 <li class="layer" data-depth="0.45"><img class="img4" src="img\scene3\s3_skater2.png"></li>
                 <li class="layer" data-depth="0.3"><img class="img4" src="img\scene3\s3_skater.png"></li>
-                <li class="layer" data-depth="0.3"><img class="img4" src="img\scene3\skater2.png"></li>                
+                <!-- <li class="layer" data-depth="0.3"><img class="img4" src="img\scene3\skater2.png"></li>   -->              
         </ul>
         <!-- <button onclick="removeDiv()">change</button> -->
     </div>
@@ -392,18 +462,18 @@ document.getElementById('btn2').src="img/s3_btn1.png";
                             if(step >= steps){
                                     step = 4;   
                                      $("#btn").remove();
-                                    $("body").append("<img src='img/next.png' id='btn' alt='' />");
+                                    $("body").append("<img src='img/s2_btn2.png' id='btn' alt='' />");
                                     
                                     w();
                                     r();
                                 function w(){
                                 var img1 =document.getElementById('btn');
                                 img1.addEventListener('mouseup', function(event){
-                                document.getElementById('btn').src="img/next.png";
+                                document.getElementById('btn').src="img/s2_btn2.png";
                                 console.log('up');
 
                                 document.getElementById('animbg').style.display="none";
-                                $("body").append("<img src='img/next.png' id='btnN' alt='' />");
+                                $("body").append("<img src='img/s2_btn2.png' id='btnN' alt='' />");
                                 s();
                                 t();
 
@@ -411,14 +481,14 @@ document.getElementById('btn2').src="img/s3_btn1.png";
                                 // window.location.assign("default3.html");
                                 },false);
                                 img1.addEventListener('mousedown', function(event){
-                                document.getElementById('btn').src="img/next1.png";
+                                document.getElementById('btn').src="img/s2_btn2_2.png";
                                 console.log('down');
                                 },false);};
 
                                 function r(){
                                 var img1 =document.getElementById('btn');
                                 img1.addEventListener('touchend', function(event){
-                                document.getElementById('btn').src="img/next.png";
+                                document.getElementById('btn').src="img/s2_btn2.png";
                                 console.log('up');
 
                                 if (document.getElementById('animbg').style.display!="none"){
@@ -431,7 +501,7 @@ document.getElementById('btn2').src="img/s3_btn1.png";
                                 }
                                 },false);
                                 img1.addEventListener('touchstart', function(event){
-                                document.getElementById('btn').src="img/next1.png";
+                                document.getElementById('btn').src="img/s2_btn2_2.png";
                                 console.log('down');
                                 },false);};
 
