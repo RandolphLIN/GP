@@ -136,7 +136,7 @@ p {
     		font-size: 10pt;
 		}
 
-		#LoadingBar {
+#LoadingBar {
     z-index: 999999;
     position: absolute;
     top: 0;
@@ -353,7 +353,7 @@ skpark.addEventListener('touchstart', function(event){
 <script id="editable">
 	var stage, w, h, loader;
 	var sky, grant,grant2, ground, hill, hill2, light;
-
+	init();
 	function init() {
 		examples.showDistractor();
 		stage = new createjs.Stage("testCanvas");
@@ -540,8 +540,8 @@ skpark.addEventListener('touchstart', function(event){
     <script type="text/javascript">
         
     window.onload=function(){
-        init();
-        initPage();
+    	var late=setTimeout("initPage();",2000)
+        
     }
     </script>
 
